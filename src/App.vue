@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <h1>Hello,you!</h1>
     <transition name="bounce">
       <router-view></router-view>
     </transition>

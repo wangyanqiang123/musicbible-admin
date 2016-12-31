@@ -9,7 +9,6 @@ import ElementUI from 'element-ui'
 import Hello from './components/Hello'
 
 const routes = [
-  {path: '/', component: Hello},
   {path: '/hello', component: Hello}
 ]
 
