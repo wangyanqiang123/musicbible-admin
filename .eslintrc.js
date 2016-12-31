@@ -8,7 +8,8 @@ module.exports = {
   extends: 'standard',
   // required to lint *.vue files
   plugins: [
-    'html'
+    'vue',
+    'html',
   ],
   // add your custom rules here
   'rules': {

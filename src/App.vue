@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Hello,you!</h1>
+    <h1>Hello,you! From App.Vue</h1>
     <transition name="bounce">
       <router-view></router-view>
     </transition>
