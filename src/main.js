@@ -6,9 +6,11 @@ import Vuex from 'vuex'
 import store from './store'
 import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
+import Hello from './components/Hello'
 
 const routes = [
-  {path: '/', component: App}
+  {path: '/', component: Hello},
+  {path: '/hello', component: Hello}
 ]
 
 const router = new VueRouter({
@@ -21,7 +23,6 @@ Vue.use(Vuex)
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
   template: '<App/>',
   router,
   store,
