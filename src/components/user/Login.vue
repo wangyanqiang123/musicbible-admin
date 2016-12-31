@@ -52,7 +52,12 @@ export default {
     onSubmit (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          user.login(this.form.username, this.form.password)
+          user.login(this.form.username, this.form.password, response => {
+            console.log(response.data)
+            this.$router.replace('adhome')
+          }, error => {
+            console.log(error.message)
+          })
         } else {
           console.log('invalid form submit')
           return false

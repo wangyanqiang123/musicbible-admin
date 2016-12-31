@@ -7,14 +7,10 @@ const apiEndPoint = {
   login: 'http://test.boostfield.com:8888/api/login'
 }
 const user = {
-  login: function (username, password) {
+  login: function (username, password, success, error) {
     axios.post(apiEndPoint.login, {username: username, password: password})
-    .then(response => {
-      console.log(response.data)
-    })
-    .catch(error => {
-      console.log(error)
-    })
+    .then(success)
+    .catch(error)
   }
 }
 
