@@ -4,11 +4,11 @@
     <el-form-item label="帐号" prop="username">
       <el-input v-model="form.username"></el-input>
     </el-form-item>
-    <el-form-item label="密码" prop="pass">
+    <el-form-item label="密码" prop="password">
       <el-input v-model="form.password"></el-input>
     </el-form-item>
     <el-form-item>
-      <el-button type="primary" @click="onSubmit">立即创建</el-button>
+      <el-button type="primary" @click="onSubmit('form')">立即创建</el-button>
       <el-button>取消</el-button>
     </el-form-item>
   </el-form>
@@ -41,15 +41,22 @@ export default {
         username: [
           {required: true, trigger: 'blur', message: '请输入帐号'}
         ],
-        pass: [
+        password: [
           {required: true, trigger: 'blur', message: '请输入密码'}
         ]
       }
     }
   },
   methods: {
-    onSubmit () {
-      console.log('onsumbit')
+    onSubmit (formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          console.log('submit form!')
+        } else {
+          console.log('invalid form submit')
+          return false
+        }
+      })
     }
   }
 
