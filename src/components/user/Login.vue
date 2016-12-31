@@ -29,6 +29,7 @@
   }
 </style>
 <script>
+import user from '../../api/User'
 export default {
   name: 'Login',
   data () {
@@ -51,7 +52,7 @@ export default {
     onSubmit (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          console.log('submit form!')
+          user.login(this.form.username, this.form.password)
         } else {
           console.log('invalid form submit')
           return false
