@@ -14,8 +14,8 @@
       <el-col :span="6">
         <aside>
           <h1>这是边栏目</h1>
-          <el-menu default-active="adhome/hello" theme="dark" :router="true">
-            <el-menu-item index="adhome/hello">唱片</el-menu-item>
+          <el-menu default-active="adhome/record" theme="dark" :router="true">
+            <el-menu-item index="adhome/record">唱片</el-menu-item>
             <el-menu-item index="2">艺术家</el-menu-item>
           </el-menu>
         </aside>
