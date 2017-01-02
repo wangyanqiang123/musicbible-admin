@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1>Hello,you! From App.Vue</h1>
     <transition name="bounce">
       <router-view></router-view>
     </transition>
@@ -20,6 +19,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
