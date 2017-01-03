@@ -5,7 +5,7 @@
     </transition>
   </div>
 </template>
-
+<style lang="less" src="./app.less"></style>
 <script>
 export default {
   name: 'app'
