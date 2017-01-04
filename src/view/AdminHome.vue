@@ -7,6 +7,9 @@
     background: @brown-color;
   }
   .top-nav {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
     .nav-right {
       float: right;
       ul.el-menu > li {
@@ -14,8 +17,9 @@
       }
     }
   }
+
   .panel-center {
-    top: 1em;
+    top: 4em;
     bottom: 0px;
     width: 100%;
     height: 100%;
@@ -41,9 +45,9 @@
     <el-row class="panel-center">
       <el-col :span="4">
         <aside>
-          <el-menu default-active="adhome/record" theme="dark" :router="true">
-            <el-menu-item index="adhome/record">唱片</el-menu-item>
-            <el-menu-item index="2">艺术家</el-menu-item>
+          <el-menu default-active="/record" theme="dark" :router="true">
+            <el-menu-item index="/record">唱片</el-menu-item>
+            <el-menu-item index="/tunes">曲目</el-menu-item>
           </el-menu>
         </aside>
       </el-col>
