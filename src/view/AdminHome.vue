@@ -1,43 +1,25 @@
-<template>
-  <div>
-    <el-row class="panel-top">
-      <el-col :span="20">
-        <h3>音乐圣经管理后台</h3>
-      </el-col>
-      <el-col :span="4">
-        <el-tooltip effect="dark" content="点击退出登录" placement="bottom">
-          <el-button>退出登录</el-button>
-        </el-tooltip>
-      </el-col>
-    </el-row>
-    <el-row class="panel-center">
-      <el-col :span="6">
-        <aside>
-          <h1>这是边栏目</h1>
-          <el-menu default-active="adhome/record" theme="dark" :router="true">
-            <el-menu-item index="adhome/record">唱片</el-menu-item>
-            <el-menu-item index="2">艺术家</el-menu-item>
-          </el-menu>
-        </aside>
-      </el-col>
-      <el-col :span="18">
-        <transition name="fade">
-          <router-view></router-view>
-        </transition>
-      </el-col>
-    </el-row>
-  </div>
-</template>
-<style scoped>
-  .panel-top {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    height: 60px;
-    width: 100%;
+<style scoped lang="less">
+  @import "../mixins.less";
+  .el-menu {
+    border-radius: 0;
   }
+  .el-menu--dark {
+    background: @brown-color;
+  }
+  .top-nav {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    .nav-right {
+      float: right;
+      ul.el-menu > li {
+        text-align: center;
+      }
+    }
+  }
+
   .panel-center {
-    top: 60px;
+    top: 4em;
     bottom: 0px;
     width: 100%;
     height: 100%;
@@ -45,6 +27,39 @@
     overflow: hidden;
   }
 </style>
+<template>
+  <div>
+
+    <el-menu theme="dark" default-active="1" class="top-nav" mode="horizontal" @select="handleSelect" align="right">
+      <el-menu-item index="1">音乐圣经管理后台</el-menu-item>
+      <el-submenu index="2" class="nav-right">
+        <template slot="title">这里是昵称</template>
+        <el-menu-item index="2-1">选项1</el-menu-item>
+        <el-menu-item index="2-2">选项2</el-menu-item>
+        <el-menu-item index="2-3">退出登录</el-menu-item>
+      </el-submenu>
+
+    </el-menu>
+    <div class="line"></div>
+
+    <el-row class="panel-center">
+      <el-col :span="4">
+        <aside>
+          <el-menu default-active="/record" theme="dark" :router="true">
+            <el-menu-item index="/record">唱片</el-menu-item>
+            <el-menu-item index="/tunes">曲目</el-menu-item>
+          </el-menu>
+        </aside>
+      </el-col>
+      <el-col :span="20">
+        <transition name="fade">
+          <router-view></router-view>
+        </transition>
+      </el-col>
+    </el-row>
+  </div>
+</template>
+
 <script>
 export default {
   name: 'AdminHome',

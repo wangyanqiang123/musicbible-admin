@@ -4,8 +4,8 @@
 import axios from 'axios'
 
 const record = {
-  list: function (pageNumber, pageSize, success, error) {
-    axios.get('http://www.musicbible.com/api/v1/records/list', {params: {page: pageNumber, pageSize: pageSize}}).then(success).catch(error)
+  list: function (params, success, error) {
+    axios.get('http://www.musicbible.com/api/v1/records/list', {params: params}).then(success).catch(error)
   }
 }
 
