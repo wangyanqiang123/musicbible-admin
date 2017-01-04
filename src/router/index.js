@@ -3,16 +3,15 @@
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Hello from '../components/Hello'
 import Login from '../components/user/Login'
-import AdminHome from '../view/AdminHome'
-import Record from '../components/record/Record'
+import RecordList from '../view/record/RecordList'
+import Index from '../view/Index'
 Vue.use(VueRouter)
 
 const routes = [
   {path: '/', component: Login},
-  {name: 'hello', path: '/adhome', component: AdminHome, children: [{path: 'hello', component: Hello}, {path: 'record', component: Record}]},
-  {name: 'adhome', path: '/adhome', component: AdminHome}
+  {name: 'home', path: '/home', component: Index},
+  {name: 'recordList', path: '/recordList', component: RecordList}
 ]
 
 const router = new VueRouter({
