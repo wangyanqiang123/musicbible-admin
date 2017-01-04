@@ -52,7 +52,7 @@
   /* Font
   -------------------------- */
   --font-size-base: 14px;
-  --font-color-base: #1f2d3d;
+  --font-color-base: rgba(0, 0, 0, 0.7);
   --font-color-disabled-base: #bbb;
 
   /* Size
@@ -401,7 +401,7 @@
  -------------------------- */
   --table-border-color: #e0e6ed;
   --table-text-color: #1f2d3d;
-  --table-header-background: #EFF2F7;
+  --table-header-background: #c1b087;
 
   /* Pagination
  -------------------------- */
@@ -509,8 +509,8 @@
   /* Steps
   --------------------------*/
   --menu-item-color: var(--link-color);
-  --menu-item-fill: #eff2f7;
-  --menu-item-hover-fill: var(--disabled-border-base);
+  --menu-item-fill: #c1b087;
+  --menu-item-hover-fill: #c1b087;
   --submenu-item-fill: #e5e9f2;
 
   --dark-menu-item-color: var(--link-color);

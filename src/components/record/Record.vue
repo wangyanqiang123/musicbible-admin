@@ -1,9 +1,20 @@
+<style scoped lang="less">
+
+</style>
 <template>
   <section>
     <template>
-      <el-table :data="recordlist" style="width:100%" v-loading="loadinglist" element-loading-text="拼命加载中">
-        <el-table-column prop="TitleCN" label="中文名称"></el-table-column>
-        <el-table-column prop="TitleEN" label="英文名称"></el-table-column>
+      <el-table :data="recordlist" border style="width:100%" v-loading="loadinglist" element-loading-text="拼命加载中">
+        <el-table-column label="中文名称" align="left" width="300px">
+          <template scope="scope">
+            <span style="text-overflow: ellipsis;white-space: nowrap" :title="scope.row.TitleCN">{{ scope.row.TitleCN }}</span>
+          </template>
+        </el-table-column>
+        <el-table-column prop="TitleEN" label="英文名称" align="left">
+          <template scope="scope">
+            <span style="text-overflow: ellipsis;white-space: nowrap" :title="scope.row.TitleEN">{{ scope.row.TitleEN }}</span>
+          </template>
+        </el-table-column>
       </el-table>
       <el-row>
         <el-col :span="24">
@@ -17,8 +28,7 @@
     </template>
   </section>
 </template>
-<style>
-</style>
+
 <script>
   import record from '../../api/Record'
   export default {
@@ -27,8 +37,8 @@
         recordlist: [],
         total: 0,
         page: 1,
-        pageSize: 10,
-        loadinglist: false
+        pageSize: 15,
+        loadinglist: true
       }
     },
     methods: {

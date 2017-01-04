@@ -5567,7 +5567,7 @@
     overflow: hidden;
 }
 .el-table th {
-    background-color: #EFF2F7;
+    background-color: #c1b087;
     text-align: left;
 }
 .el-table th > div {
@@ -5750,7 +5750,7 @@
     position: absolute;
     top: -1px;
     right: 0;
-    background-color: #EFF2F7;
+    background-color: #c1b087;
     border-bottom: 1px solid #e0e6ed;
 }
 .el-table__fixed-right {
@@ -5770,7 +5770,7 @@
     z-index: 3;
 }
 .el-table__fixed-header-wrapper thead div {
-    background-color: #EFF2F7;
+    background-color: #c1b087;
     color: #1f2d3d;
 }
 .el-table__fixed-body-wrapper {
@@ -5790,7 +5790,7 @@
     overflow: hidden;
 }
 .el-table__header-wrapper thead div {
-    background-color: #EFF2F7;
+    background-color: #c1b087;
     color: #1f2d3d;
 }
 .el-table__body-wrapper {
@@ -14014,7 +14014,7 @@
     position: relative;
     margin: 0;
     padding-left: 0;
-    background-color: #eff2f7;
+    background-color: #c1b087;
 }
 .el-menu:before, .el-menu:after {
     display: table;
@@ -14090,7 +14090,7 @@
     margin-top: -3px;
 }
 .el-menu--horizontal .el-menu-item:hover, .el-menu--horizontal .el-submenu__title:hover {
-    background-color: #eff2f7;
+    background-color: #c1b087;
 }
 .el-menu--horizontal > .el-menu-item:hover, .el-menu--horizontal > .el-submenu:hover .el-submenu__title, .el-menu--horizontal > .el-submenu.is-active .el-submenu__title {
     border-bottom: 5px solid #c1b087;

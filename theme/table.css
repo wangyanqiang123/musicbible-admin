@@ -566,7 +566,7 @@
 }
 
 .el-table th{
-    background-color: #EFF2F7;
+    background-color: #c1b087;
     text-align: left;
 }
 
@@ -780,7 +780,7 @@
     position: absolute;
     top: -1px;
     right: 0;
-    background-color: #EFF2F7;
+    background-color: #c1b087;
     border-bottom: 1px solid #e0e6ed;
 }
 
@@ -804,7 +804,7 @@
 }
 
 .el-table__fixed-header-wrapper thead div{
-    background-color: #EFF2F7;
+    background-color: #c1b087;
     color: #1f2d3d;
 }
 
@@ -829,7 +829,7 @@
 }
 
 .el-table__header-wrapper thead div{
-    background-color: #EFF2F7;
+    background-color: #c1b087;
     color: #1f2d3d;
 }
 
