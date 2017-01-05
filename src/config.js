@@ -1,21 +1,20 @@
 /**
  * Created by qky on 2017/1/4.
  */
-let env = process.env.NODE_ENV || "dev";
-
+let env = process.env.NODE_ENV || 'development'
 let configs = {
-  'dev': {
+  'development': {
     homeUrl: '/',
-    serverUrl: 'http://114.55.65.35:9999/api',
-    uploadServerUrl: "http://hifiimg.img-cn-hangzhou.aliyuncs.com",
-    mediaUrl: "http://hifimedia.oss-cn-hangzhou.aliyuncs.com"
+    serverUrl: 'http://192.168.199.115:8888/api',
+    uploadServerUrl: 'http://hifiimg.img-cn-hangzhou.aliyuncs.com',
+    mediaUrl: 'http://hifimedia.oss-cn-hangzhou.aliyuncs.com'
   },
   'production': {
     homeUrl: '/',
     serverUrl: 'https://preview.musicbible.com/api',
-    uploadServerUrl: "http://hifiimg.img-cn-hangzhou.aliyuncs.com",
-    mediaUrl: "http://hifimedia.oss-cn-hangzhou.aliyuncs.com"
+    uploadServerUrl: 'http://hifiimg.img-cn-hangzhou.aliyuncs.com',
+    mediaUrl: 'http://hifimedia.oss-cn-hangzhou.aliyuncs.com'
   }
-};
+}
 
-export default configs[env];
+export default configs[env]
