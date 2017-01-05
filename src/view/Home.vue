@@ -27,6 +27,9 @@
                     <el-menu-item index="/recordList">
                         唱片
                     </el-menu-item>
+                    <el-menu-item index="/recordEdit">
+                        唱片编辑
+                    </el-menu-item>
                     <el-menu-item index="/tune">
                         曲目
                     </el-menu-item>
@@ -67,12 +70,6 @@ export default {
 
 <style lang="less">
     @import "../app";
-    @black: #2a323c;
-    @light-black: #324057;
-    @extra-light-black: #475669;
-    @blue: #03a9f4;
-    @gray: #d3dce6;
-    @light-gray: #e5e9f2;
     @sider-width: 224px;
     @top-height: 70px;
     @sider-collapse-width: 64px;
@@ -94,7 +91,7 @@ export default {
             color: #fff;
 
             a {
-                color: @gray;
+                color: @brown-color;
             }
             .el-dropdown-link {
                 color: #fff;
@@ -216,7 +213,7 @@ export default {
         &-header {
             padding: 20px 10px;
             border-bottom: 1px solid #e9e9e9;
-            background-color: @light-black;
+            background-color: @brown-color;
             &:before,
             &:after {
                 content: '';

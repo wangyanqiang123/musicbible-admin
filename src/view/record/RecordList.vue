@@ -19,22 +19,23 @@
             </template>
             <template slot="action" >
 
-                    <el-button type="button" class="button-new">新建</el-button>
+                    <el-button type="button" class="button-new" @click="newRecord">新建</el-button>
 
             </template>
             <template slot="table">
                 <el-table-column align="left"
-                        label="唱片中文名"
+                        label="唱片名称"
                         width="300">
                     <template scope="scope">
                         <span style="text-overflow: ellipsis;white-space: nowrap" :title="scope.row.TitleCN">{{ scope.row.TitleCN }}</span>
+                        <span style="text-overflow: ellipsis;white-space: nowrap" :title="scope.row.TitleEN">{{ scope.row.TitleEN }}</span>
                     </template>
                 </el-table-column>
                 <el-table-column align="left"
-                        label="唱片英文名"
+                        label="唱片编号"
                         >
                     <template scope="scope">
-                        <span style="text-overflow: ellipsis;white-space: nowrap" :title="scope.row.TitleCN">{{ scope.row.TitleEN }}</span>
+                        <span style="text-overflow: ellipsis;white-space: nowrap" :title="scope.row.SerilNumber">{{ scope.row.SerilNumber }}</span>
                     </template>
                 </el-table-column>
 
@@ -83,6 +84,9 @@
       },
       refresh () {
         // this.$refs.user.refresh()
+      },
+      newRecord () {
+        this.$message('暂未开放')
       }
     }
   }
