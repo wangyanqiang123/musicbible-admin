@@ -1,5 +1,5 @@
 <template>
-  <p-layout>
+  <div>
     <el-upload
             v-if="ossDataFinished"
             action="http://hifiimg.oss-cn-hangzhou.aliyuncs.com"
@@ -15,7 +15,7 @@
       <el-button size="small" type="primary">点击上传</el-button>
       <div class="el-upload__tip" slot="tip">只能上传jpg/png文件</div>
     </el-upload>
-  </p-layout>
+  </div>
 </template>
 <style>
 
@@ -23,6 +23,7 @@
 <script>
 import OSS from '../../api/OSS'
 export default {
+  name: 'RecordEdit',
   data () {
     return {
       multiple: true,

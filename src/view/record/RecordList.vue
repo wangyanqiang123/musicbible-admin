@@ -1,5 +1,5 @@
 <template>
-    <p-layout>
+    <div>
         <p-search
                 ref="record"
                 :search-rules="recordRules"
@@ -51,7 +51,7 @@
                 </el-table-column>
             </template>
         </p-search>
-    </p-layout>
+    </div>
 </template>
 <style lang="less" scoped>
     button.el-button.button-new {
@@ -62,6 +62,7 @@
   import RecordApi from '../../api/Record'
   import TaxonomyApi from '../../api/Taxonomy'
   export default {
+    name: 'RecordList',
     data () {
       return {
         fetchList: RecordApi.list,

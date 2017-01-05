@@ -1,5 +1,5 @@
 <template>
-    <div class="p-layout">
+    <div>
         <div class="p-layout-topbar clearfix">
             <div class="p-layout-name" :class="{'sider-mini': isCollapse}">
                 <span class="full" v-if="!isCollapse" @click="backToHome">音乐圣经管理后台</span>
@@ -9,7 +9,7 @@
             <div class="p-layout-nav">
                 <el-dropdown class="is-user">
                   <span class="el-dropdown-link">
-                    {{ user.username + ':' + user.nickname}} <i class="el-icon-caret-bottom el-icon--right"></i>
+                    admin <i class="el-icon-caret-bottom el-icon--right"></i>
                   </span>
                     <el-dropdown-menu slot="dropdown">
                         <el-dropdown-item command="logout">退出</el-dropdown-item>
@@ -39,7 +39,7 @@
                 <div class="p-layout-content">
                     <div class="p-layout-container">
                         <div class="p-layout-inner">
-                            <slot></slot>
+                            <router-view></router-view>
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
 <script>
 import User from '../api/User'
 export default {
-  name: 'p-layout',
+  name: 'home',
   data () {
     return {
       loggedIn: true,
@@ -62,14 +62,18 @@ export default {
   },
   created () {
     this.user = User.getUser()
-    console.log(this.user)
+    console.log('created current user = ' + this.user)
+  },
+  mounted () {
+    this.user = User.getUser()
+    console.log('mounted current user = ' + this.user)
   },
   methods: {
     toggleSider () {
       this.isCollapse = !this.isCollapse
     },
     backToHome () {
-      this.$router.replace('home')
+      this.$router.replace('index')
     }
   }
 }

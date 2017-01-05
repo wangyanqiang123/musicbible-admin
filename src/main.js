@@ -8,6 +8,7 @@ import store from './store'
 import ElementUI from 'element-ui'
 import router from './router'
 import '../theme/index.css'
+import Index from './view/Index'
 import Home from './view/Home'
 import Search from './components/Search'
 import ApiConfig from './api'
@@ -15,6 +16,7 @@ import ApiConfig from './api'
 Vue.use(ElementUI)
 Vue.use(Vuex)
 
+Vue.component(Index.name, Index)
 Vue.component(Home.name, Home)
 Vue.component(Search.name, Search)
 ApiConfig.config()

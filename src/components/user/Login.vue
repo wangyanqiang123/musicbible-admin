@@ -54,7 +54,7 @@ export default {
         if (valid) {
           user.login(this.form.username, this.form.password, response => {
             user.setUser(response.data.result)
-            this.$router.replace('home')
+            this.$router.replace('index')
           }, error => {
             console.log(error.message)
           })
