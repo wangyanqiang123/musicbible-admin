@@ -5,7 +5,7 @@ let env = process.env.NODE_ENV || 'development'
 let configs = {
   'development': {
     homeUrl: '/',
-    serverUrl: 'http://192.168.199.115:8888/api',
+    serverUrl: 'http://192.168.199.115:8888',
     uploadServerUrl: 'http://hifiimg.img-cn-hangzhou.aliyuncs.com',
     mediaUrl: 'http://hifimedia.oss-cn-hangzhou.aliyuncs.com'
   },

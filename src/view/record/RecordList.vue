@@ -19,7 +19,7 @@
             </template>
             <template slot="action" >
 
-                    <el-button type="button" class="button-new">新建</el-button>
+                    <el-button type="button" class="button-new" @click="createRecord">新建</el-button>
 
             </template>
             <template slot="table">
@@ -60,12 +60,12 @@
     }
 </style>
 <script>
-  import recordApi from '../../api/Record'
-
+  import RecordApi from '../../api/Record'
+  import TaxonomyApi from '../../api/Taxonomy'
   export default {
     data () {
       return {
-        fetchList: recordApi.list,
+        fetchList: RecordApi.list,
         recordRules: {
           keyword: [{required: true, trigger: 'blur', message: '请输入搜索关键字'}]
         },
@@ -84,6 +84,13 @@
       },
       refresh () {
         // this.$refs.user.refresh()
+      },
+      createRecord () {
+        TaxonomyApi.list(success => {
+          console.log(success)
+        }, error => {
+          console.log(error)
+        })
       }
     }
   }

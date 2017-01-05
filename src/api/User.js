@@ -5,7 +5,7 @@ import axios from 'axios'
 import buildUrl from 'build-url'
 import configs from '../config'
 const apiEndPoint = {
-  login: buildUrl(configs.serverUrl, {path: 'v0/login'})
+  login: buildUrl(configs.serverUrl, {path: 'api/v0/login'})
 }
 var User
 var GetUser = function () {
@@ -30,12 +30,12 @@ const user = {
       return false
     }
     var user = JSON.parse(userstr)
-    return !user.token
+    return user.token !== null || user.token !== undefined
   },
   getUser: GetUser,
   getAuthHeader () {
     return {
-      'Authorization': 'Bearer' + GetUser().token
+      'Authorization': GetUser().token
     }
   },
   removeUser () {
