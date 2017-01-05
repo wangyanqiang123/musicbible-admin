@@ -2,8 +2,8 @@
     <div class="p-layout">
         <div class="p-layout-topbar clearfix">
             <div class="p-layout-name" :class="{'sider-mini': isCollapse}">
-                <span class="full" v-if="!isCollapse">音乐圣经管理后台</span>
-                <span class="mini" v-else>后台</span>
+                <span class="full" v-if="!isCollapse" @click="backToHome">音乐圣经管理后台</span>
+                <span class="mini" v-else @click="backToHome">后台</span>
             </div>
             <div class="p-layout-collapse" @click="toggleSider"><i class="fa fa-bars"></i></div>
             <div class="p-layout-nav">
@@ -63,6 +63,9 @@ export default {
   methods: {
     toggleSider () {
       this.isCollapse = !this.isCollapse
+    },
+    backToHome () {
+      this.$router.replace('home')
     }
   }
 }
@@ -81,6 +84,9 @@ export default {
         height: 100%;
     }
     .p-layout {
+        .el-menu--dark .el-menu-item:hover {
+            background-color: @primary-dark-color;
+        }
         &-topbar {
             position: fixed;
             width: 100%;

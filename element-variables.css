@@ -16,12 +16,12 @@
   --color-warning: #f7ba2a;
   --color-danger: #ff4949;
   --color-info: #9c743c;
-  --color-blue: #2e90fe;
-  --color-blue-light: #5da9ff;
+  --color-blue: #9c743c;
+  --color-blue-light: #c1b087;
   --color-blue-lighter: rgba(var(--color-blue), 0.12);
   --color-white: #fff;
   --color-black: #000;
-  --color-grey: #c0ccda;
+  --color-grey: rgba(0, 0, 0, 0.2);
 
   /* Link
   -------------------------- */
@@ -152,7 +152,7 @@
   --select-option-height: 36px;
   --select-option-hover-background: #e5e9f2;
   --select-option-selected: var(--color-primary);
-  --select-option-selected-hover: #1D8CE0;
+  --select-option-selected-hover: #c1b087;
 
   --select-group-color: #999;
   --select-group-height: 30px;
@@ -468,7 +468,7 @@
   /* Dropdown
   -------------------------- */
   --dropdown-menu-box-shadow: var(--box-shadow-dark);
-  --dropdown-menuItem-hover-fill: #e5e9f2;
+  --dropdown-menuItem-hover-fill: #f5f5f5;
   --dropdown-menuItem-hover-color: var(--link-color);
 
   /* Badge
@@ -511,11 +511,11 @@
   --menu-item-color: var(--link-color);
   --menu-item-fill: #c1b087;
   --menu-item-hover-fill: #c1b087;
-  --submenu-item-fill: #e5e9f2;
+  --submenu-item-fill: #f5f5f5;
 
   --dark-menu-item-color: var(--link-color);
   --dark-menu-item-fill: var(--link-color);
-  --dark-menu-item-hover-fill: var(--link-color);
+  --dark-menu-item-hover-fill: #333;
   --dark-submenu-item-fill: #1f2d3d;
 
   /* Rate

@@ -94,7 +94,7 @@
     white-space: nowrap;
     cursor: pointer;
     background: #fff;
-    border: 1px solid #c0ccda;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     color: #1F2D3D;
     -webkit-appearance: none;
     text-align: center;
@@ -154,7 +154,7 @@
 .el-button.is-disabled{}
 
 .el-button.is-disabled, .el-button.is-disabled:hover, .el-button.is-disabled:focus{
-    color: #c0ccda;
+    color: rgba(0, 0, 0, 0.2);
     cursor: not-allowed;
     background-image: none;
     background-color: #EFF2F7;
@@ -220,7 +220,7 @@
 
 .el-button--primary.is-plain{
     background: #fff;
-    border: 1px solid #c0ccda;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     color: #1F2D3D;
 }
 
@@ -264,7 +264,7 @@
 
 .el-button--success.is-plain{
     background: #fff;
-    border: 1px solid #c0ccda;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     color: #1F2D3D;
 }
 
@@ -308,7 +308,7 @@
 
 .el-button--warning.is-plain{
     background: #fff;
-    border: 1px solid #c0ccda;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     color: #1F2D3D;
 }
 
@@ -352,7 +352,7 @@
 
 .el-button--danger.is-plain{
     background: #fff;
-    border: 1px solid #c0ccda;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     color: #1F2D3D;
 }
 
@@ -396,7 +396,7 @@
 
 .el-button--info.is-plain{
     background: #fff;
-    border: 1px solid #c0ccda;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     color: #1F2D3D;
 }
 

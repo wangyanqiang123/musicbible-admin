@@ -1,6 +1,8 @@
 <template>
     <p-layout>
-        面板
+        <div>
+            This is DashBoard
+        </div>
     </p-layout>
 </template>
 <script>
