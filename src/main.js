@@ -10,12 +10,14 @@ import router from './router'
 import '../theme/index.css'
 import Home from './view/Home'
 import Search from './components/Search'
+import ApiConfig from './api'
 
 Vue.use(ElementUI)
 Vue.use(Vuex)
 
 Vue.component(Home.name, Home)
 Vue.component(Search.name, Search)
+ApiConfig.config()
 /* eslint-disable no-new */
 new Vue({
   template: '<App/>',

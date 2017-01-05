@@ -18,9 +18,7 @@
                 </el-form-item>
             </template>
             <template slot="action" >
-
-                    <el-button type="button" class="button-new" @click="newRecord">新建</el-button>
-
+                    <el-button type="button" class="button-new" @click="createRecord">新建</el-button>
             </template>
             <template slot="table">
                 <el-table-column align="left"
@@ -61,13 +59,14 @@
     }
 </style>
 <script>
-  import recordApi from '../../api/Record'
-
+  import RecordApi from '../../api/Record'
+  import TaxonomyApi from '../../api/Taxonomy'
   export default {
     data () {
       return {
-        fetchList: recordApi.list,
+        fetchList: RecordApi.list,
         recordRules: {
+          keyword: [{required: true, trigger: 'blur', message: '请输入搜索关键字'}]
         },
         recordForm: {
           keyword: '',
@@ -85,8 +84,12 @@
       refresh () {
         // this.$refs.user.refresh()
       },
-      newRecord () {
-        this.$message('暂未开放')
+      createRecord () {
+        TaxonomyApi.list(success => {
+          console.log(success)
+        }, error => {
+          console.log(error)
+        })
       }
     }
   }
