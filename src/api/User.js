@@ -37,6 +37,9 @@ const user = {
     return {
       'Authorization': 'Bearer' + GetUser().token
     }
+  },
+  removeUser () {
+    localStorage.removeItem('User')
   }
 }
 

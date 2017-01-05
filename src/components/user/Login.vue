@@ -53,8 +53,7 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           user.login(this.form.username, this.form.password, response => {
-            console.log(response.data)
-            user.setUser(response.data)
+            user.setUser(response.data.result)
             this.$router.replace('home')
           }, error => {
             console.log(error.message)

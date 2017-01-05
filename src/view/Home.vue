@@ -9,7 +9,7 @@
             <div class="p-layout-nav">
                 <el-dropdown class="is-user">
                   <span class="el-dropdown-link">
-                    admin <i class="el-icon-caret-bottom el-icon--right"></i>
+                    {{ user.username + ':' + user.nickname}} <i class="el-icon-caret-bottom el-icon--right"></i>
                   </span>
                     <el-dropdown-menu slot="dropdown">
                         <el-dropdown-item command="logout">退出</el-dropdown-item>
@@ -47,15 +47,19 @@
 </template>
 
 <script>
+import User from '../api/User'
 export default {
   name: 'p-layout',
   data () {
     return {
       loggedIn: true,
-      isCollapse: false
+      isCollapse: false,
+      user: {}
     }
   },
   created () {
+    this.user = User.getUser()
+    console.log(this.user)
   },
   methods: {
     toggleSider () {
