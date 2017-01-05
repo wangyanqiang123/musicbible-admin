@@ -67,6 +67,7 @@
       return {
         fetchList: recordApi.list,
         recordRules: {
+          keyword: [{required: true, trigger: 'blur', message: '请输入搜索关键字'}]
         },
         recordForm: {
           keyword: '',
