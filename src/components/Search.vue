@@ -7,7 +7,7 @@
                 </el-form-item>
             </slot>
             <el-form-item>
-                <el-button type="primary" @click="handleSubmit">查询</el-button>
+                <el-button type="primary" @click="handleSubmit" icon="search">查询</el-button>
             </el-form-item>
         </el-form>
 

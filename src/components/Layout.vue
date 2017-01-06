@@ -52,7 +52,7 @@
 <script>
 import User from '../api/User'
 export default {
-  name: 'home',
+  name: 'layout',
   data () {
     return {
       loggedIn: true,

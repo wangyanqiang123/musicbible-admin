@@ -18,7 +18,7 @@
                 </el-form-item>
             </template>
             <template slot="action" >
-                    <el-button type="button" class="button-new" @click="createRecord">新建</el-button>
+                    <el-button type="button" class="button-new" @click="createRecord" icon="edit">新建</el-button>
             </template>
             <template slot="table">
                 <el-table-column align="left"
