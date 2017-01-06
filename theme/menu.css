@@ -98,7 +98,7 @@
   height: 56px;
   line-height: 56px;
   font-size: 14px;
-  color: #475669;
+  color: #3c372f;
   padding: 0 20px;
   cursor: pointer;
   position: relative;
@@ -121,7 +121,7 @@
 }
 
 .el-menu--dark{
-  background-color: #324057;
+  background-color: #3c372f;
 }
 
 .el-menu--dark .el-menu-item, .el-menu--dark .el-submenu__title{
@@ -154,7 +154,7 @@
 }
 
 .el-menu--horizontal .el-menu-item:hover{
-  background-color: #D3DCE6;
+  background-color: #c1b087;
 }
 
 .el-menu--horizontal .el-submenu{
@@ -207,7 +207,7 @@
 .el-menu--horizontal.el-menu--dark{}
 
 .el-menu--horizontal.el-menu--dark .el-menu-item:hover, .el-menu--horizontal.el-menu--dark .el-submenu__title:hover{
-  background-color: #324057;
+  background-color: #3c372f;
 }
 
 .el-menu--horizontal.el-menu--dark .el-submenu .el-menu-item, .el-menu--horizontal.el-menu--dark .el-submenu .el-submenu-title{

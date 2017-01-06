@@ -110,7 +110,7 @@
 }
 
 .el-notification .el-icon-information{
-    color: #50bfff;
+    color: #9c743c;
 }
 
 .el-notification .el-icon-warning{
@@ -152,7 +152,7 @@
     right: 20px;
     position: absolute;
     cursor: pointer;
-    color: #c0ccda;
+    color: rgba(0, 0, 0, 0.2);
     font-size: 14px;
 }
 

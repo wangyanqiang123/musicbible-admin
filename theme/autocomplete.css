@@ -101,16 +101,16 @@
     cursor: not-allowed
 }
 .el-input.is-disabled .el-input__inner::-webkit-input-placeholder{
-    color: #c0ccda
+    color: rgba(0, 0, 0, 0.2)
 }
 .el-input.is-disabled .el-input__inner::-moz-placeholder{
-    color: #c0ccda
+    color: rgba(0, 0, 0, 0.2)
 }
 .el-input.is-disabled .el-input__inner:-ms-input-placeholder{
-    color: #c0ccda
+    color: rgba(0, 0, 0, 0.2)
 }
 .el-input.is-disabled .el-input__inner::placeholder{
-    color: #c0ccda
+    color: rgba(0, 0, 0, 0.2)
 }
 .el-input.is-active .el-input__inner{
     outline: none;
@@ -123,9 +123,9 @@
     background-color: #fff;
     background-image: none;
     border-radius: 4px;
-    border: 1px solid #c0ccda;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
-    color: #1f2d3d;
+    color: rgba(0, 0, 0, 0.7);
     display: block;
     font-size: inherit;
     height: 36px;
@@ -161,7 +161,7 @@
     right: 0;
     top: 0;
     text-align: center;
-    color: #c0ccda
+    color: rgba(0, 0, 0, 0.2)
 }
 .el-input__icon:after{
     content: '';
@@ -207,7 +207,7 @@
     vertical-align: middle;
     display: table-cell;
     position: relative;
-    border: 1px solid #c0ccda;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     padding: 0 10px;
     width: 1%;
@@ -256,16 +256,16 @@
     cursor: not-allowed
 }
 .el-textarea.is-disabled .el-textarea__inner::-webkit-input-placeholder{
-    color: #c0ccda
+    color: rgba(0, 0, 0, 0.2)
 }
 .el-textarea.is-disabled .el-textarea__inner::-moz-placeholder{
-    color: #c0ccda
+    color: rgba(0, 0, 0, 0.2)
 }
 .el-textarea.is-disabled .el-textarea__inner:-ms-input-placeholder{
-    color: #c0ccda
+    color: rgba(0, 0, 0, 0.2)
 }
 .el-textarea.is-disabled .el-textarea__inner::placeholder{
-    color: #c0ccda
+    color: rgba(0, 0, 0, 0.2)
 }
 .el-textarea__inner{
     display: block;
@@ -275,10 +275,10 @@
     box-sizing: border-box;
     width: 100%;
     font-size: 14px;
-    color: #1f2d3d;
+    color: rgba(0, 0, 0, 0.7);
     background-color: #fff;
     background-image: none;
-    border: 1px solid #c0ccda;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     transition: border-color .2s cubic-bezier(.645,.045,.355,1)
 }

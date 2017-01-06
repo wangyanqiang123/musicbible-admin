@@ -1,15 +1,15 @@
 <template>
-    <div class="p-layout">
+    <div>
         <div class="p-layout-topbar clearfix">
             <div class="p-layout-name" :class="{'sider-mini': isCollapse}">
-                <span class="full" v-if="!isCollapse">音乐圣经管理后台</span>
-                <span class="mini" v-else>后台</span>
+                <span class="full" v-if="!isCollapse" @click="backToHome">音乐圣经管理后台</span>
+                <span class="mini" v-else @click="backToHome">后台</span>
             </div>
             <div class="p-layout-collapse" @click="toggleSider"><i class="fa fa-bars"></i></div>
             <div class="p-layout-nav">
                 <el-dropdown class="is-user">
                   <span class="el-dropdown-link">
-                    {{ user.username + ':' + user.nickname}} <i class="el-icon-caret-bottom el-icon--right"></i>
+                    admin <i class="el-icon-caret-bottom el-icon--right"></i>
                   </span>
                     <el-dropdown-menu slot="dropdown">
                         <el-dropdown-item command="logout">退出</el-dropdown-item>
@@ -27,6 +27,9 @@
                     <el-menu-item index="/recordList">
                         唱片
                     </el-menu-item>
+                    <el-menu-item index="/recordEdit">
+                        唱片编辑
+                    </el-menu-item>
                     <el-menu-item index="/tune">
                         曲目
                     </el-menu-item>
@@ -36,7 +39,7 @@
                 <div class="p-layout-content">
                     <div class="p-layout-container">
                         <div class="p-layout-inner">
-                            <slot></slot>
+                            <router-view></router-view>
                         </div>
                     </div>
                 </div>
@@ -49,7 +52,7 @@
 <script>
 import User from '../api/User'
 export default {
-  name: 'p-layout',
+  name: 'home',
   data () {
     return {
       loggedIn: true,
@@ -59,11 +62,18 @@ export default {
   },
   created () {
     this.user = User.getUser()
-    console.log(this.user)
+    console.log('created current user = ' + this.user)
+  },
+  mounted () {
+    this.user = User.getUser()
+    console.log('mounted current user = ' + this.user)
   },
   methods: {
     toggleSider () {
       this.isCollapse = !this.isCollapse
+    },
+    backToHome () {
+      this.$router.replace('index')
     }
   }
 }
@@ -71,12 +81,6 @@ export default {
 
 <style lang="less">
     @import "../app";
-    @black: #2a323c;
-    @light-black: #324057;
-    @extra-light-black: #475669;
-    @blue: #03a9f4;
-    @gray: #d3dce6;
-    @light-gray: #e5e9f2;
     @sider-width: 224px;
     @top-height: 70px;
     @sider-collapse-width: 64px;
@@ -88,6 +92,9 @@ export default {
         height: 100%;
     }
     .p-layout {
+        .el-menu--dark .el-menu-item:hover {
+            background-color: @primary-dark-color;
+        }
         &-topbar {
             position: fixed;
             width: 100%;
@@ -98,7 +105,7 @@ export default {
             color: #fff;
 
             a {
-                color: @gray;
+                color: @brown-color;
             }
             .el-dropdown-link {
                 color: #fff;
@@ -220,7 +227,7 @@ export default {
         &-header {
             padding: 20px 10px;
             border-bottom: 1px solid #e9e9e9;
-            background-color: @light-black;
+            background-color: @brown-color;
             &:before,
             &:after {
                 content: '';

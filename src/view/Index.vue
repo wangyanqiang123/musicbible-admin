@@ -1,7 +1,8 @@
 <template>
-    <p-layout>
-        面板
-    </p-layout>
+        <div>
+            This is DashBoard
+        </div>
+
 </template>
 <script>
   export default {

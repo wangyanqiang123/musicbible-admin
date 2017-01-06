@@ -1,5 +1,5 @@
 <template>
-    <p-layout>
+    <div>
         <p-search
                 ref="record"
                 :search-rules="recordRules"
@@ -18,23 +18,22 @@
                 </el-form-item>
             </template>
             <template slot="action" >
-
                     <el-button type="button" class="button-new" @click="createRecord">新建</el-button>
-
             </template>
             <template slot="table">
                 <el-table-column align="left"
-                        label="唱片中文名"
+                        label="唱片名称"
                         width="300">
                     <template scope="scope">
                         <span style="text-overflow: ellipsis;white-space: nowrap" :title="scope.row.TitleCN">{{ scope.row.TitleCN }}</span>
+                        <span style="text-overflow: ellipsis;white-space: nowrap" :title="scope.row.TitleEN">{{ scope.row.TitleEN }}</span>
                     </template>
                 </el-table-column>
                 <el-table-column align="left"
-                        label="唱片英文名"
+                        label="唱片编号"
                         >
                     <template scope="scope">
-                        <span style="text-overflow: ellipsis;white-space: nowrap" :title="scope.row.TitleCN">{{ scope.row.TitleEN }}</span>
+                        <span style="text-overflow: ellipsis;white-space: nowrap" :title="scope.row.SerilNumber">{{ scope.row.SerilNumber }}</span>
                     </template>
                 </el-table-column>
 
@@ -52,7 +51,7 @@
                 </el-table-column>
             </template>
         </p-search>
-    </p-layout>
+    </div>
 </template>
 <style lang="less" scoped>
     button.el-button.button-new {
@@ -63,6 +62,7 @@
   import RecordApi from '../../api/Record'
   import TaxonomyApi from '../../api/Taxonomy'
   export default {
+    name: 'RecordList',
     data () {
       return {
         fetchList: RecordApi.list,
