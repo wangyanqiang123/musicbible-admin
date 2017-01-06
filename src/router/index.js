@@ -16,6 +16,7 @@ const routes = [
   {name: 'home',
     path: '/',
     component: Layout,
+    redirect: '/index',
     children: [{path: 'recordList', component: RecordList},
     {path: 'recordEdit', component: RecordEdit},
     {path: 'index', component: Index}]},
