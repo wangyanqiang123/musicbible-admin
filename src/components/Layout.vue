@@ -39,7 +39,9 @@
                 <div class="p-layout-content">
                     <div class="p-layout-container">
                         <div class="p-layout-inner">
-                            <router-view></router-view>
+                            <transition name="fade">
+                                <router-view></router-view>
+                            </transition>
                         </div>
                     </div>
                 </div>
