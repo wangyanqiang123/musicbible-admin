@@ -485,7 +485,7 @@
     font-size: 14px;
     margin-top: -15px;
     line-height: 16px;
-    background-color: #c1b087;
+    background-color: #575049;
     height: 32px;
     z-index: -1;
     left: 0;
@@ -530,5 +530,5 @@
 }
 .el-time-panel__btn.confirm {
     font-weight: 800;
-    color: #c1b087;
+    color: #575049;
 }

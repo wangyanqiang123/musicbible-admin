@@ -21,6 +21,9 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   },
   env: {
-    'browser': true
+    'browser': true,
+  },
+  "globals": {
+    "moment": true
   }
 }

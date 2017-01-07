@@ -111,8 +111,8 @@
     vertical-align: middle;
 }
 .el-checkbox__input.is-indeterminate .el-checkbox__inner{
-    background-color: #c1b087;
-    border-color: #9c743c;
+    background-color: #575049;
+    border-color: #864c00;
 }
 .el-checkbox__input.is-indeterminate .el-checkbox__inner::before{
     content: '';
@@ -128,11 +128,11 @@
     display: none;
 }
 .el-checkbox__input.is-focus .el-checkbox__inner{
-    border-color: #c1b087;
+    border-color: #575049;
 }
 .el-checkbox__input.is-checked .el-checkbox__inner{
-    background-color: #c1b087;
-    border-color: #9c743c;
+    background-color: #575049;
+    border-color: #864c00;
 }
 .el-checkbox__input.is-checked .el-checkbox__inner::after{
     transform: rotate(45deg) scaleY(1);
@@ -170,7 +170,7 @@
 .el-checkbox__inner{
     display: inline-block;
     position: relative;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid #d3d3d3;
     border-radius: 4px;
     box-sizing: border-box;
     width: 18px;
@@ -181,7 +181,7 @@
                   background-color .25s cubic-bezier(.71,-.46,.29,1.46);
 }
 .el-checkbox__inner:hover{
-    border-color: #c1b087;
+    border-color: #575049;
 }
 .el-checkbox__inner::after{
     box-sizing: content-box;
@@ -332,26 +332,26 @@
 .el-tag--gray{
     background-color: #e5e9f2;
     border-color: #e5e9f2;
-    color: #3c372f;
+    color: #c1b087;
 }
 .el-tag--gray .el-tag__close:hover{
-    background-color: #3c372f;
+    background-color: #c1b087;
     color: #fff;
 }
 .el-tag--gray.is-hit{
-    border-color: #3c372f;
+    border-color: #c1b087;
 }
 .el-tag--primary{
     background-color: rgba(32,159,255,0.10);
     border-color: rgba(32,159,255,0.20);
-    color: #c1b087;
+    color: #575049;
 }
 .el-tag--primary .el-tag__close:hover{
-    background-color: #c1b087;
+    background-color: #575049;
     color: #fff;
 }
 .el-tag--primary.is-hit{
-    border-color: #c1b087;
+    border-color: #575049;
 }
 .el-tag--success{
     background-color: rgba(18,206,102,0.10);
@@ -566,7 +566,7 @@
 }
 
 .el-table th{
-    background-color: #c1b087;
+    background-color: #f3f3f3;
     text-align: left;
 }
 
@@ -780,7 +780,7 @@
     position: absolute;
     top: -1px;
     right: 0;
-    background-color: #c1b087;
+    background-color: #f3f3f3;
     border-bottom: 1px solid #e0e6ed;
 }
 
@@ -804,7 +804,7 @@
 }
 
 .el-table__fixed-header-wrapper thead div{
-    background-color: #c1b087;
+    background-color: #f3f3f3;
     color: #1f2d3d;
 }
 
@@ -829,7 +829,7 @@
 }
 
 .el-table__header-wrapper thead div{
-    background-color: #c1b087;
+    background-color: #f3f3f3;
     color: #1f2d3d;
 }
 

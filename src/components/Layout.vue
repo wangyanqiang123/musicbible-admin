@@ -38,9 +38,10 @@
             <div class="p-layout-panel">
                 <div class="p-layout-content">
                     <div class="p-layout-container">
-                        <div class="p-layout-inner">
+                        <transition name="fade">
                             <router-view></router-view>
-                        </div>
+                        </transition>
+
                     </div>
                 </div>
                 <div class="p-layout-footer"> 版权所有 © 音乐圣经 2016</div>
@@ -52,7 +53,7 @@
 <script>
 import User from '../api/User'
 export default {
-  name: 'home',
+  name: 'layout',
   data () {
     return {
       loggedIn: true,
@@ -81,7 +82,7 @@ export default {
 
 <style lang="less">
     @import "../app";
-    @sider-width: 224px;
+    @sider-width: 175px;
     @top-height: 70px;
     @sider-collapse-width: 64px;
     @transition: all 0.3s ease;
@@ -91,33 +92,45 @@ export default {
         margin: 0;
         height: 100%;
     }
+    .el-menu--dark {
+        background: @primary-color !important;
+    }
+    .el-menu--dark .el-menu-item:hover, .el-menu--dark .el-submenu__title:hover{
+        background-color: @primary-hover-color !important;
+    }
+    .el-menu-item {
+        color: @brown-color-light !important;
+    }
+    .el-menu-item.is-active {
+        background-color: @primary-hover-color;
+    }
+    .el-button.el-button--text.el-button--small:hover {
+        text-decoration: underline;
+    }
     .p-layout {
-        .el-menu--dark .el-menu-item:hover {
-            background-color: @primary-dark-color;
-        }
+
         &-topbar {
             position: fixed;
             width: 100%;
             height: @top-height;
             line-height: @top-height;
-            background-color: @brown-color;
+            background-color: @primary-color;
             z-index: 101;
             color: #fff;
-
             a {
                 color: @brown-color;
             }
             .el-dropdown-link {
-                color: #fff;
+                color: @brown-color-light;
             }
         }
         &-name {
             width: @sider-width;
             text-align: center;
             float: left;
-            background-color: @brown-color;
+            background-color: @primary-dark-color;
             font-family: Helvetica;
-            font-size: 22px;
+            font-size: 20px;
             white-space: nowrap;
             transition: @transition;
             &.sider-mini {
@@ -132,7 +145,7 @@ export default {
         }
         &-sider {
             width: @sider-width;
-            background-color: @brown-color;
+            background-color: @primary-color;
             position: fixed;
             top: @top-height;
             left: 0;
@@ -171,6 +184,9 @@ export default {
             &.sider-full {
                 .p-layout-panel {
                     left: @sider-width;
+                }
+                .el-menu {
+                    text-align: left;
                 }
             }
             &.sider-mini {
@@ -227,7 +243,7 @@ export default {
         &-header {
             padding: 20px 10px;
             border-bottom: 1px solid #e9e9e9;
-            background-color: @brown-color;
+            background-color: @primary-color;
             &:before,
             &:after {
                 content: '';

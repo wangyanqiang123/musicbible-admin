@@ -125,31 +125,31 @@
 .el-tag--gray{
     background-color: #e5e9f2;
     border-color: #e5e9f2;
-    color: #3c372f
+    color: #c1b087
 }
 
 .el-tag--gray .el-tag__close:hover{
-    background-color: #3c372f;
+    background-color: #c1b087;
     color: #fff
 }
 
 .el-tag--gray.is-hit{
-    border-color: #3c372f
+    border-color: #c1b087
 }
 
 .el-tag--primary{
     background-color: rgba(32,159,255,0.10);
     border-color: rgba(32,159,255,0.20);
-    color: #c1b087
+    color: #575049
 }
 
 .el-tag--primary .el-tag__close:hover{
-    background-color: #c1b087;
+    background-color: #575049;
     color: #fff
 }
 
 .el-tag--primary.is-hit{
-    border-color: #c1b087
+    border-color: #575049
 }
 
 .el-tag--success{

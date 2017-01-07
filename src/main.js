@@ -9,7 +9,7 @@ import ElementUI from 'element-ui'
 import router from './router'
 import '../theme/index.css'
 import Index from './view/Index'
-import Home from './view/Home'
+import Home from './components/Layout'
 import Search from './components/Search'
 import ApiConfig from './api'
 
