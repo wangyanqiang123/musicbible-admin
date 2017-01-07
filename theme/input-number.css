@@ -101,20 +101,20 @@
     cursor: not-allowed
 }
 .el-input.is-disabled .el-input__inner::-webkit-input-placeholder{
-    color: rgba(0, 0, 0, 0.2)
+    color: #7f7f7f
 }
 .el-input.is-disabled .el-input__inner::-moz-placeholder{
-    color: rgba(0, 0, 0, 0.2)
+    color: #7f7f7f
 }
 .el-input.is-disabled .el-input__inner:-ms-input-placeholder{
-    color: rgba(0, 0, 0, 0.2)
+    color: #7f7f7f
 }
 .el-input.is-disabled .el-input__inner::placeholder{
-    color: rgba(0, 0, 0, 0.2)
+    color: #7f7f7f
 }
 .el-input.is-active .el-input__inner{
     outline: none;
-    border-color: #c1b087
+    border-color: #575049
 }
 .el-input__inner{
     -webkit-appearance: none;
@@ -123,7 +123,7 @@
     background-color: #fff;
     background-image: none;
     border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid #d3d3d3;
     box-sizing: border-box;
     color: rgba(0, 0, 0, 0.7);
     display: block;
@@ -152,7 +152,7 @@
 }
 .el-input__inner:focus{
     outline: none;
-    border-color: #c1b087
+    border-color: #575049
 }
 .el-input__icon{
     position: absolute;
@@ -161,7 +161,7 @@
     right: 0;
     top: 0;
     text-align: center;
-    color: rgba(0, 0, 0, 0.2)
+    color: #7f7f7f
 }
 .el-input__icon:after{
     content: '';
@@ -207,7 +207,7 @@
     vertical-align: middle;
     display: table-cell;
     position: relative;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid #d3d3d3;
     border-radius: 4px;
     padding: 0 10px;
     width: 1%;
@@ -256,16 +256,16 @@
     cursor: not-allowed
 }
 .el-textarea.is-disabled .el-textarea__inner::-webkit-input-placeholder{
-    color: rgba(0, 0, 0, 0.2)
+    color: #7f7f7f
 }
 .el-textarea.is-disabled .el-textarea__inner::-moz-placeholder{
-    color: rgba(0, 0, 0, 0.2)
+    color: #7f7f7f
 }
 .el-textarea.is-disabled .el-textarea__inner:-ms-input-placeholder{
-    color: rgba(0, 0, 0, 0.2)
+    color: #7f7f7f
 }
 .el-textarea.is-disabled .el-textarea__inner::placeholder{
-    color: rgba(0, 0, 0, 0.2)
+    color: #7f7f7f
 }
 .el-textarea__inner{
     display: block;
@@ -278,7 +278,7 @@
     color: rgba(0, 0, 0, 0.7);
     background-color: #fff;
     background-image: none;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid #d3d3d3;
     border-radius: 4px;
     transition: border-color .2s cubic-bezier(.645,.045,.355,1)
 }
@@ -299,7 +299,7 @@
 }
 .el-textarea__inner:focus{
     outline: none;
-    border-color: #c1b087
+    border-color: #575049
 }
 :root{
     /* Transition
@@ -422,7 +422,7 @@
 
 .el-input-number__increase, .el-input-number__decrease{
     height: auto;
-    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid #d3d3d3;
     width: 36px;
     line-height: 34px;
     top: 1px;
@@ -434,11 +434,11 @@
 }
 
 .el-input-number__increase:hover, .el-input-number__decrease:hover{
-    color: #c1b087
+    color: #575049
 }
 
 .el-input-number__increase:hover:not(.is-disabled) ~ .el-input .el-input__inner:not(.is-disabled), .el-input-number__decrease:hover:not(.is-disabled) ~ .el-input .el-input__inner:not(.is-disabled){
-    border-color: #c1b087
+    border-color: #575049
 }
 
 .el-input-number__increase.is-disabled, .el-input-number__decrease.is-disabled{

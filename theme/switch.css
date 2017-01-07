@@ -164,8 +164,8 @@
 }
 
 .el-switch__input:checked + .el-switch__core{
-    border-color: #c1b087;
-    background-color: #c1b087
+    border-color: #575049;
+    background-color: #575049
 }
 
 .el-switch__core{
@@ -174,11 +174,11 @@
     position: relative;
     width: 46px;
     height: 22px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid #7f7f7f;
     outline: none;
     border-radius: 12px;
     box-sizing: border-box;
-    background: rgba(0, 0, 0, 0.2);
+    background: #7f7f7f;
     cursor: pointer;
     transition: border-color .3s, background-color .3s
 }

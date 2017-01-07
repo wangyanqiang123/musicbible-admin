@@ -160,11 +160,11 @@
 
 .el-dialog__close{
     cursor: pointer;
-    color: rgba(0, 0, 0, 0.2);
+    color: #7f7f7f;
 }
 
 .el-dialog__close:hover{
-    color: #c1b087;
+    color: #575049;
 }
 
 .el-dialog__title{

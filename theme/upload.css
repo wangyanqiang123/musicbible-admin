@@ -177,7 +177,7 @@
     top: 0;
     height: 100%;
     border-radius: 2px 0 0 2px;
-    background-color: #c1b087;
+    background-color: #575049;
     text-align: right;
     border-radius: 100px;
     line-height: 1;
@@ -370,7 +370,7 @@
 .el-upload__file.is-finished{}
 
 .el-upload__file.is-finished a:hover{
-    color: #c1b087;
+    color: #575049;
     cursor: pointer;
 }
 
@@ -390,7 +390,7 @@
     right: 15px;
     top: 0;
     font-size: 12px;
-    color: #c1b087;
+    color: #575049;
     display: none;
 }
 
@@ -430,12 +430,12 @@
 }
 
 .el-dragger:not(.is-showCover):hover{
-    border-color: #c1b087;
+    border-color: #575049;
 }
 
 .el-dragger.is-dragOver{
     background-color: rgba(32, 159, 255, .06);
-    border: 2px dashed #c1b087;
+    border: 2px dashed #575049;
 }
 
 .el-dragger__cover{
@@ -555,6 +555,6 @@
 }
 
 .el-dragger__text em{
-    color: #c1b087;
+    color: #575049;
     font-style: normal;
 }

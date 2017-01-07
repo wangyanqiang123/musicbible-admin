@@ -13,7 +13,7 @@
 
         <slot name="action"></slot>
 
-        <el-table :data="tableData" v-loading="loadingList" element-loading-text="拼命加载中" style="width: 100%">
+        <el-table :data="tableData" border v-loading="loadingList" element-loading-text="拼命加载中" style="width: 100%">
             <slot name="table"></slot>
         </el-table>
 
