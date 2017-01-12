@@ -3,38 +3,25 @@
         <div class="p-layout-breadcrumb">
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item :to="{ path: '/index' }">首页</el-breadcrumb-item>
-                <el-breadcrumb-item :to="{ path: '/record/list' }">唱片</el-breadcrumb-item>
+                <el-breadcrumb-item :to="{ path: '/artist/list' }">艺术家</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
         <div class="p-layout-inner">
             <p-search
                     ref="record"
-                    :search-rules="recordRules"
+                    :search-rules="artistRules"
                     :fetch-list="fetchList"
                     page-layout="total, sizes, prev, pager, next, jumper"
-                    :search-form="recordForm">
+                    :search-form="artistForm">
                 <template slot="form">
                     <el-form-item prop="keyword">
-                        <el-input v-model="recordForm.keyword" placeholder="唱片关键字"></el-input>
-                    </el-form-item>
-                    <el-form-item prop="role">
-                        <el-select v-model="recordForm.searchType" placeholder="搜索条件">
-                            <el-option label="唱片名称" value="0"></el-option>
-                            <el-option label="唱片编号" value="1"></el-option>
-                        </el-select>
+                        <el-input v-model="artistForm.keyword" placeholder="关键字"></el-input>
                     </el-form-item>
                 </template>
                 <template slot="action" >
-                    <el-button type="button" class="button-new" @click="createRecord" icon="edit">新建</el-button>
+                    <el-button type="button" class="button-new" @click="createArtist" icon="edit">新建</el-button>
                 </template>
                 <template slot="table">
-                    <el-table-column align="left"
-                                     label="唱片编号"
-                                     width="114">
-                        <template scope="scope">
-                            <p class="table-text" :title="scope.row.SerilNumber">{{ scope.row.SerilNumber }}</p>
-                        </template>
-                    </el-table-column>
                     <el-table-column align="left"
                                      label="创建信息"
                                      width="180"
@@ -45,12 +32,13 @@
                         </template>
                     </el-table-column>
                     <el-table-column align="left"
-                                     label="唱片名称"
+                                     label="艺术家名称"
 
                     >
                         <template scope="scope">
-                            <p class="table-text" :title="scope.row.TitleCN">{{ scope.row.TitleCN }}</p>
-                            <p class="table-text" :title="scope.row.TitleEN">{{ scope.row.TitleEN }}</p>
+                            <p class="table-text" :title="scope.row.TitleCN">{{ scope.row.name_cn }}</p>
+                            <p class="table-text" :title="scope.row.TitleEN">{{ scope.row.last_name_en }}</p>
+                            <p class="table-text" :title="scope.row.TitleEN">{{ scope.row.first_name_en }}</p>
                         </template>
                     </el-table-column>
                     <el-table-column
@@ -72,7 +60,7 @@
     </div>
 </template>
 <style lang="less" scoped>
-    @import "../../app.less";
+    @import "../../../app.less";
     button.el-button.button-new {
         float: right;
     }
@@ -80,28 +68,25 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         line-height: 14px;
-
     }
     p.table-text.time {
         color: @text-second-color;
     }
 </style>
-<script type="text/javascript" src="./static/moment.min.js"></script>
 <script>
-  import RecordApi from '../../api/Record'
-  import {setTime} from '../../utils'
+  import ArtistApi from '../../../api/Artist'
+  import {setTime} from '../../../utils'
 
   export default {
-    name: 'RecordList',
+    name: 'ArtistList',
     data () {
       return {
-        fetchList: RecordApi.list,
-        recordRules: {
+        fetchList: ArtistApi.list,
+        artistRules: {
           // keyword: [{required: true, trigger: 'blur', message: '请输入搜索关键字'}]
         },
-        recordForm: {
-          keyword: '',
-          searchType: '0'
+        artistForm: {
+          keyword: ''
         }
       }
     },
@@ -115,8 +100,8 @@
       refresh () {
         // this.$refs.user.refresh()
       },
-      createRecord () {
-        this.$router.push('/record/new')
+      createArtist () {
+        this.$router.push('/artist/new')
       }
     },
     filters: {

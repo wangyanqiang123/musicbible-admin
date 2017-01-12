@@ -5,7 +5,8 @@ import axios from 'axios'
 import buildUrl from 'build-url'
 import configs from '../config'
 const apiEndPoint = {
-  login: buildUrl(configs.serverUrl, {path: 'api/v0/login'})
+  login: buildUrl(configs.serverUrl, {path: 'api/v0/login'}),
+  logout: buildUrl(configs.serverUrl, {path: 'api/v0/logout'})
 }
 var User
 var GetUser = function () {
@@ -16,6 +17,11 @@ const user = {
     axios.post(apiEndPoint.login, {username: username, password: password})
     .then(success)
     .catch(error)
+  },
+  logout: function (res, err) {
+    axios.post(apiEndPoint.logout)
+      .then(res)
+      .catch(err)
   },
   setUser: function (user) {
     User = user
@@ -34,9 +40,7 @@ const user = {
   },
   getUser: GetUser,
   getAuthHeader () {
-    return {
-      'Authorization': GetUser().token
-    }
+    return GetUser().token
   },
   removeUser () {
     localStorage.removeItem('User')
