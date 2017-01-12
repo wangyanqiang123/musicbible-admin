@@ -78,7 +78,9 @@
       this.pageSize = this.params.pageSize
     },
     mounted () {
-      this.fetch()
+      if (this.tableData.length === 0) {
+        this.fetch()
+      }
     },
     methods: {
       fetch (data = {}) {

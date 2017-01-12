@@ -7,9 +7,9 @@
             </div>
             <div class="p-layout-collapse" @click="toggleSider"><i class="fa fa-bars"></i></div>
             <div class="p-layout-nav">
-                <el-dropdown class="is-user">
+                <el-dropdown class="is-user" @command="handleUserDropDown">
                   <span class="el-dropdown-link">
-                    admin <i class="el-icon-caret-bottom el-icon--right"></i>
+                    {{user.nickname || user.username}} <i class="el-icon-caret-bottom el-icon--right"></i>
                   </span>
                     <el-dropdown-menu slot="dropdown">
                         <el-dropdown-item command="logout">退出</el-dropdown-item>
@@ -24,27 +24,30 @@
                         :unique-opened="true"
 
                         :router="true">
-                    <el-menu-item index="/recordList">
+                    <el-menu-item index="/record/list">
                         唱片
                     </el-menu-item>
-                    <el-menu-item index="/recordEdit">
+                    <el-menu-item index="/record/edit">
                         唱片编辑
                     </el-menu-item>
-                    <el-menu-item index="/tune">
-                        曲目
+                    <el-menu-item index="/artist/list">
+                        艺术家
                     </el-menu-item>
                 </el-menu>
             </aside>
             <div class="p-layout-panel">
                 <div class="p-layout-content">
                     <div class="p-layout-container">
-                        <transition name="fade">
-                            <router-view></router-view>
-                        </transition>
+                        <keep-alive>
+                            <transition name="fade">
+                                <router-view></router-view>
+                            </transition>
+                        </keep-alive>
+
 
                     </div>
                 </div>
-                <div class="p-layout-footer"> 版权所有 © 音乐圣经 2016</div>
+                <div class="p-layout-footer"> 版权所有 © 音乐圣经 2017</div>
             </div>
         </div>
     </div>
@@ -74,7 +77,15 @@ export default {
       this.isCollapse = !this.isCollapse
     },
     backToHome () {
-      this.$router.replace('index')
+      this.$router.replace('/index')
+    },
+    logout () {
+      console.log('logout')
+      User.removeUser()
+      this.$router.replace('login')
+    },
+    handleUserDropDown (command) {
+      this.logout()
     }
   }
 }
