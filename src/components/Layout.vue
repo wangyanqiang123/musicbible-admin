@@ -39,12 +39,8 @@
                 <div class="p-layout-content">
                     <div class="p-layout-container">
                         <keep-alive>
-                            <transition name="fade">
                                 <router-view></router-view>
-                            </transition>
                         </keep-alive>
-
-
                     </div>
                 </div>
                 <div class="p-layout-footer"> 版权所有 © 音乐圣经 2017</div>
