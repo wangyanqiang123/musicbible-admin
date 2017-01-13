@@ -12,7 +12,7 @@
         </el-form>
 
         <slot name="action"></slot>
-        <el-button type="button" class="button-refresh" @click="refreshList">刷新</el-button>
+
         <el-table :data="tableData" border v-loading="loadingList" element-loading-text="拼命加载中" style="width: 100%">
             <slot name="table"></slot>
         </el-table>

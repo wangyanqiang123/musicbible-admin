@@ -78,7 +78,7 @@ export default {
     logout () {
       console.log('logout')
       User.removeUser()
-      this.$router.replace('login')
+      this.$router.replace('/login')
     },
     handleUserDropDown (command) {
       this.logout()
