@@ -97,7 +97,7 @@
           console.log('error: ' + JSON.stringify(error))
         })
       },
-      refresh () {
+      refreshList () {
         const page = this.currentPage = 1
         this.fetch({page})
       },
@@ -128,8 +128,12 @@
             float: right;
             margin-top: 10px;
         }
+
         &-action {
             padding: 16px 0;
+            float: right;
+        }
+        .button-refresh {
             float: right;
         }
     }

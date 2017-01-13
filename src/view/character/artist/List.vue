@@ -2,8 +2,8 @@
     <div>
         <div class="p-layout-breadcrumb">
             <el-breadcrumb separator="/">
-                <el-breadcrumb-item :to="{ path: '/index' }">首页</el-breadcrumb-item>
-                <el-breadcrumb-item :to="{ path: '/artist/list' }">艺术家</el-breadcrumb-item>
+                <el-breadcrumb-item :to="{ path: '/admin/dashboard' }">首页</el-breadcrumb-item>
+                <el-breadcrumb-item :to="{ path: '/admin/artist/list' }">艺术家</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
         <div class="p-layout-inner">
@@ -101,7 +101,7 @@
         // this.$refs.user.refresh()
       },
       createArtist () {
-        this.$router.push('/artist/new')
+        this.$router.push('/admin/artist/new')
       }
     },
     filters: {

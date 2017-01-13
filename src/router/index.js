@@ -15,17 +15,16 @@ import NotFound from '../view/NotFound'
 Vue.use(VueRouter)
 
 const routes = [
-  {path: '/login', component: Login},
-  {name: 'home',
-    path: '/',
+  {path: '/admin/login', component: Login},
+  {name: 'admin',
+    path: '/admin',
     component: Layout,
-    redirect: '/index',
-    children: [{path: '/record/list', component: RecordList},
-    {path: '/record/edit', component: RecordEdit},
-      {path: '/record/new', component: RecordNew},
-    {path: 'index', component: Index},
-    {path: '/artist/list', component: ArtistList},
-      {path: '/artist/new', component: ArtistNew}
+    children: [{path: 'record/list', component: RecordList},
+    {path: 'record/edit', component: RecordEdit},
+      {path: 'record/new', component: RecordNew},
+    {path: 'dashboard', component: Index},
+    {path: 'artist/list', component: ArtistList},
+      {path: 'artist/new', component: ArtistNew}
     ]
   },
     {path: '*', component: NotFound}

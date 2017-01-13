@@ -24,13 +24,13 @@
                         :unique-opened="true"
 
                         :router="true">
-                    <el-menu-item index="/record/list">
+                    <el-menu-item index="/admin/record/list">
                         唱片
                     </el-menu-item>
-                    <el-menu-item index="/record/edit">
+                    <el-menu-item index="/admin/record/edit">
                         唱片编辑
                     </el-menu-item>
-                    <el-menu-item index="/artist/list">
+                    <el-menu-item index="/admin/artist/list">
                         艺术家
                     </el-menu-item>
                 </el-menu>
@@ -39,12 +39,8 @@
                 <div class="p-layout-content">
                     <div class="p-layout-container">
                         <keep-alive>
-                            <transition name="fade">
                                 <router-view></router-view>
-                            </transition>
                         </keep-alive>
-
-
                     </div>
                 </div>
                 <div class="p-layout-footer"> 版权所有 © 音乐圣经 2017</div>
@@ -77,12 +73,12 @@ export default {
       this.isCollapse = !this.isCollapse
     },
     backToHome () {
-      this.$router.replace('/index')
+      this.$router.replace('/admin/dashboard')
     },
     logout () {
       console.log('logout')
       User.removeUser()
-      this.$router.replace('login')
+      this.$router.replace('/admin/login')
     },
     handleUserDropDown (command) {
       this.logout()

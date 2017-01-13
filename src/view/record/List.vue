@@ -2,8 +2,8 @@
     <div>
         <div class="p-layout-breadcrumb">
             <el-breadcrumb separator="/">
-                <el-breadcrumb-item :to="{ path: '/index' }">首页</el-breadcrumb-item>
-                <el-breadcrumb-item :to="{ path: '/record/list' }">唱片</el-breadcrumb-item>
+                <el-breadcrumb-item :to="{ path: '/admin/dashboard' }">首页</el-breadcrumb-item>
+                <el-breadcrumb-item :to="{ path: '/admin/record/list' }">唱片</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
         <div class="p-layout-inner">
@@ -86,7 +86,7 @@
         color: @text-second-color;
     }
 </style>
-<script type="text/javascript" src="./static/moment.min.js"></script>
+<script type="text/javascript" src="/static/moment.min.js"></script>
 <script>
   import RecordApi from '../../api/Record'
   import {setTime} from '../../utils'

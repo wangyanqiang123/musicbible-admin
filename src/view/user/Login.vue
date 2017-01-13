@@ -5,7 +5,7 @@
       <el-input v-model="form.username"></el-input>
     </el-form-item>
     <el-form-item label="密码" prop="password">
-      <el-input v-model="form.password"></el-input>
+      <el-input v-model="form.password" type="password"></el-input>
     </el-form-item>
     <el-form-item>
       <el-button type="submit" @click="onSubmit('form')">登录</el-button>
@@ -54,7 +54,7 @@ export default {
         if (valid) {
           user.login(this.form.username, this.form.password, response => {
             user.setUser(response.data.result)
-            this.$router.replace('index')
+            this.$router.replace('/admin/dashboard')
           }, error => {
             console.log(error.message)
           })

@@ -14,6 +14,11 @@ const artist = {
     axios.get(apiEndPoint.list, {params: params})
       .then(res)
       .catch(err)
+  },
+  create: function (params, res, err) {
+    axios.post(apiEndPoint.new, params)
+      .then(res)
+      .catch(err)
   }
 }
 
