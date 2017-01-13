@@ -7,8 +7,10 @@ import Login from '../view/user/Login'
 import RecordList from '../view/record/List'
 import RecordEdit from '../view/record/Edit'
 import RecordNew from '../view/record/New'
-import ArtistList from '../view/character/artist/List'
-import ArtistNew from '../view/character/artist/New'
+import CharacterList from '../view/character/List'
+import CharacterNew from '../view/character/New'
+import ArticleList from '../view/article/List'
+import ArticleNew from '../view/article/New'
 import Layout from '../components/Layout'
 import Index from '../view/Index'
 import NotFound from '../view/NotFound'
@@ -23,8 +25,10 @@ const routes = [
     {path: 'record/edit', component: RecordEdit},
       {path: 'record/new', component: RecordNew},
     {path: 'dashboard', component: Index},
-    {path: 'artist/list', component: ArtistList},
-      {path: 'artist/new', component: ArtistNew}
+    {path: 'character/list', component: CharacterList},
+      {path: 'character/new', component: CharacterNew},
+      {path: 'article/list', component: ArticleList},
+      {path: 'article/new', component: ArticleNew}
     ]
   },
     {path: '*', component: NotFound}

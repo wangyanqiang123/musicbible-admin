@@ -52,7 +52,7 @@ export default {
       this.uploadData.key = key
     },
     handleProgress (event, file, fileList) {
-      console.log(event)
+
     },
     formatDate (now) {
       var year = now.getFullYear()
@@ -73,7 +73,7 @@ export default {
       console.log(response.data.result)
       var data = response.data.result
       this.uploadData = {
-        OSSAccessKeyId: data.accessId,
+        OSSAccessKeyId: data.accessid,
         policy: data.policy,
         signature: data.signature
       }

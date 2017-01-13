@@ -30,8 +30,11 @@
                     <el-menu-item index="/admin/record/edit">
                         唱片编辑
                     </el-menu-item>
-                    <el-menu-item index="/admin/artist/list">
-                        艺术家
+                    <el-menu-item index="/admin/character/list">
+                        音乐家
+                    </el-menu-item>
+                    <el-menu-item index="/admin/article/new">
+                        赏析文章
                     </el-menu-item>
                 </el-menu>
             </aside>
