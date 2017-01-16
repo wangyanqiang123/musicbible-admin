@@ -3,8 +3,8 @@
       <div class="p-layout-breadcrumb">
           <el-breadcrumb separator="/">
               <el-breadcrumb-item :to="{ path: '/admin/dashboard' }">首页</el-breadcrumb-item>
-              <el-breadcrumb-item :to="{ path: '/admin/artist/list' }">艺术家</el-breadcrumb-item>
-              <el-breadcrumb-item :to="{ path: '/admin/artist/new' }">新建</el-breadcrumb-item>
+              <el-breadcrumb-item :to="{ path: '/admin/character/list' }">艺术家</el-breadcrumb-item>
+              <el-breadcrumb-item :to="{ path: '/admin/character/new' }">新建</el-breadcrumb-item>
           </el-breadcrumb>
       </div>
       <el-card class="box-card">
@@ -37,7 +37,7 @@
     }
 </style>
 <script>
-import ArtistApi from '../../../api/Artist'
+import ArtistApi from '../../api/Artist'
 export default {
   data () {
     return {

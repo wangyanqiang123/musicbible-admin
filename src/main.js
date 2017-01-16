@@ -11,6 +11,7 @@ import '../theme/index.css'
 import Index from './view/Index'
 import Home from './components/Layout'
 import Search from './components/Search'
+import Editor from './components/Editor'
 import ApiConfig from './api'
 
 Vue.use(ElementUI)
@@ -19,6 +20,7 @@ Vue.use(Vuex)
 Vue.component(Index.name, Index)
 Vue.component(Home.name, Home)
 Vue.component(Search.name, Search)
+Vue.component(Editor.name, Editor)
 ApiConfig.config()
 /* eslint-disable no-new */
 new Vue({

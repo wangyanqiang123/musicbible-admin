@@ -3,7 +3,7 @@
         <div class="p-layout-breadcrumb">
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item :to="{ path: '/admin/dashboard' }">首页</el-breadcrumb-item>
-                <el-breadcrumb-item :to="{ path: '/admin/artist/list' }">艺术家</el-breadcrumb-item>
+                <el-breadcrumb-item :to="{ path: '/admin/character/list' }">艺术家</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
         <div class="p-layout-inner">
@@ -60,7 +60,7 @@
     </div>
 </template>
 <style lang="less" scoped>
-    @import "../../../app.less";
+    @import "../../app.less";
     button.el-button.button-new {
         float: right;
     }
@@ -74,8 +74,8 @@
     }
 </style>
 <script>
-  import ArtistApi from '../../../api/Artist'
-  import {setTime} from '../../../utils'
+  import ArtistApi from '../../api/Artist'
+  import {setTime} from '../../utils'
 
   export default {
     name: 'ArtistList',
