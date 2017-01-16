@@ -8,8 +8,9 @@
 			</el-breadcrumb>
 		</div>
 		<el-card class="box-card">
-			<p-editor></p-editor>
+			<p-editor v-model="ruleForm.content"></p-editor>
 		</el-card>
+		<button @click="getContent">test</button>
 	</div>
 </template>
 <style lang="less" scoped>
@@ -19,7 +20,19 @@
 
 </style>
 <script>
-	/* global tinymce */
-	tinymce.init({ selector: 'textarea' })
+export default {
+  data () {
+    return {
+      ruleForm: {
+        content: '<p>this is fake content</p>'
+      }
+    }
+  },
+  methods: {
+    getContent () {
+      console.log(this.ruleForm.content)
+    }
+  }
+}
 
 </script>
