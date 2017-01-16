@@ -4,7 +4,7 @@
     </div>
 </template>
 <style lang="less" scoped>
-    @import "../app.less";
+    @import "../style/app.less";
     h1 {
         color: @primary-color;
         font-weight: 200;
