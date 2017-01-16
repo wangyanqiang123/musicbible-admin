@@ -122,7 +122,7 @@
     }
   }
 </script>
-<style lang="less">
+<style lang="less" rel="stylesheet/less">
     .p-search {
         .el-pagination {
             float: right;

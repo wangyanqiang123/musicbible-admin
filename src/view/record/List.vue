@@ -71,8 +71,8 @@
 
     </div>
 </template>
-<style lang="less" scoped>
-    @import "../../app.less";
+<style lang="less" rel="stylesheet/less" scoped>
+    @import "../../style/app.less";
     button.el-button.button-new {
         float: right;
     }

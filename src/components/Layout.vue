@@ -90,8 +90,8 @@ export default {
 }
 </script>
 
-<style lang="less">
-    @import "../app";
+<style lang="less" rel="stylesheet/less">
+    @import "../style/app";
     @sider-width: 175px;
     @top-height: 70px;
     @sider-collapse-width: 64px;
