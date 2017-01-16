@@ -101,7 +101,7 @@
         // this.$refs.user.refresh()
       },
       createArtist () {
-        this.$router.push('/admin/artist/new')
+        this.$router.push('/admin/character/new')
       }
     },
     filters: {
