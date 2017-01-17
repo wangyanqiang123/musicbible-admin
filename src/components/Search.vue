@@ -69,7 +69,7 @@
       return {
         tableData: [],
         totalCount: 0,
-        pageSize: null,
+        pageSize: 10,
         currentPage: 1,
         loadingList: true
       }
@@ -90,8 +90,8 @@
           console.log(JSON.stringify(params))
           this.loadingList = false
           var data = response.data.result
-          this.tableData = data.DataList
-          this.totalCount = data.TotalCount
+          this.tableData = data.dataList
+          this.totalCount = data.total
         }, error => {
           this.loadingList = false
           console.log('error: ' + JSON.stringify(error))

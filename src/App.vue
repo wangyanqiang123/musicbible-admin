@@ -3,7 +3,7 @@
       <router-view></router-view>
   </div>
 </template>
-<style lang="less" src="./app.less"></style>
+<style lang="less" src="./style/app.less"></style>
 <script>
 export default {
   name: 'app'

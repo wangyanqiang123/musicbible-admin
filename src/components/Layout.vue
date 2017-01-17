@@ -22,7 +22,6 @@
                 <el-menu
                         theme="dark"
                         :unique-opened="true"
-
                         :router="true">
                     <el-menu-item index="/admin/record/list">
                         唱片
@@ -35,6 +34,9 @@
                     </el-menu-item>
                     <el-menu-item index="/admin/article/new">
                         赏析文章
+                    </el-menu-item>
+                    <el-menu-item index="/admin/label/list">
+                        厂牌
                     </el-menu-item>
                 </el-menu>
             </aside>
