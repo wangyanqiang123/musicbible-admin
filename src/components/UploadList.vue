@@ -16,10 +16,12 @@
         </el-upload>
     </div>
 </template>
-<style>
-    .el-upload__img{
-        width:100px;
-        height: 100px;
+<style lang="less" rel="stylesheet/less">
+    .p-upload-list{
+        .el-upload__img {
+            width: 100px;
+            height: 100px;
+        }
     }
 </style>
 <script>

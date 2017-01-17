@@ -2,18 +2,19 @@
     <div class="p-search">
         <el-form :inline="true" :rules="searchRules" ref="searchForm" :model="searchForm" class="search-form">
             <slot name="form">
-                <el-form-item prop="keywords">
-                    <el-input v-model="searchForm.keywords" placeholder="关键字"></el-input>
-                </el-form-item>
+                <!--<el-form-item prop="keywords">-->
+                    <!--<el-input v-model="searchForm.keywords" placeholder="关键字"></el-input>-->
+                <!--</el-form-item>-->
             </slot>
-            <el-form-item>
-                <el-button type="primary" @click="handleSubmit" icon="search">查询</el-button>
-            </el-form-item>
+            <!--<el-form-item>-->
+                <!--<el-button type="primary" @click="handleSubmit" icon="search">查询</el-button>-->
+            <!--</el-form-item>-->
         </el-form>
 
         <slot name="action"></slot>
 
-        <el-table :data="tableData" border v-loading="loadingList" element-loading-text="拼命加载中" style="width: 100%">
+        <el-table :data="tableData" border v-loading="loadingList" element-loading-text="拼命加载中" style="width: 100%"
+            height="300">
             <slot name="table"></slot>
         </el-table>
 
