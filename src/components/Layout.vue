@@ -233,9 +233,7 @@ export default {
             margin-top: 10px;
         }
         &-breadcrumb {
-            box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
             padding: 15px;
-            background-color: #fff;
             margin: -15px -15px 0 -15px;
         }
         &-footer {
