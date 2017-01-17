@@ -8,7 +8,7 @@
 		</div>
 		<div class="p-layout-inner">
 			<p-search
-				ref="label-list"
+				ref="label_list"
 				:search-rules="labelRules"
 				:fetch-list="fetchList"
 				page-layout="total, sizes, prev, pager, next, jumper"
@@ -24,7 +24,7 @@
 							<el-input v-model="labelForm.keyword" placeholder="关键字"></el-input>
 						</el-form-item>
 						<el-form-item prop="orderby">
-							<el-radio-group v-model="labelForm.orderby">
+							<el-radio-group v-model="labelForm.orderby" fill="#463d34" @change="orderByChanged">
 								<el-radio-button label="创建时间"></el-radio-button>
 								<el-radio-button label="权重"></el-radio-button>
 							</el-radio-group>
@@ -85,11 +85,6 @@
 	p.table-text.time {
 		color: @text-second-color;
 	}
-	label.el-radio-button.is-active {
-		span {
-			background: @primary-dark-color !important;
-		}
-	}
 </style>
 <script>
 	import LabelApi from '../../api/Label'
@@ -120,6 +115,10 @@
       },
       createRecord () {
         // this.$router.push('/record/new')
+      },
+      orderByChanged (v) {
+        console.log(this.labelForm.orderby)
+        this.$refs.label_list.refreshList()
       }
     },
     filters: {
