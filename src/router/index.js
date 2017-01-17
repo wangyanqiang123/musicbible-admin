@@ -18,27 +18,28 @@ import NotFound from '../view/NotFound'
 Vue.use(VueRouter)
 
 const routes = [
-  {path: '/admin/login', component: Login},
-  {name: 'admin',
-    path: '/admin',
-    component: Layout,
-    children: [{path: 'record/list', component: RecordList},
-    {path: 'record/edit', component: RecordEdit},
-      {path: 'record/new', component: RecordNew},
-    {path: 'dashboard', component: Index},
-    {path: 'character/list', component: CharacterList},
-      {path: 'character/new', component: CharacterNew},
-      {path: 'article/list', component: ArticleList},
-      {path: 'article/new', component: ArticleNew},
-      {path: 'label/list', component: LabelList}
-    ]
-  },
+    {path: '/admin/login', component: Login},
+    {
+        name: 'admin',
+        path: '/admin',
+        component: Layout,
+        children: [{path: 'record/list', component: RecordList},
+            {path: 'record/edit', component: RecordEdit},
+            {path: 'record/new', component: RecordNew},
+            {path: 'dashboard', component: Index},
+            {path: 'character/list', component: CharacterList},
+            {path: 'character/new', component: CharacterNew},
+            {path: 'article/list', component: ArticleList},
+            {path: 'article/new', component: ArticleNew},
+            {path: 'label/list', component: LabelList}
+        ]
+    },
     {path: '*', component: NotFound}
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  routes
+    mode: 'history',
+    routes
 })
 
 export default router
