@@ -17,7 +17,7 @@
     </div>
 </template>
 <style lang="less" rel="stylesheet/less">
-    .p-upload-list{
+    .p-upload-list {
         .el-upload__img {
             width: 100px;
             height: 100px;
@@ -26,7 +26,6 @@
 </style>
 <script>
     import OSS from '../api/OSS'
-    import _ from 'lodash'
     export default {
         name: 'UploadList',
         data () {
@@ -45,59 +44,41 @@
             }
         },
         methods: {
-            handleRemove(file, fileList)
-            {
+            handleRemove (file, fileList) {
                 console.log(file, fileList)
-            }
-            ,
-            handlePreview(file)
-            {
-                console.log('handlePreview ' + file.response);
-            }
-            ,
-            handleError(err, response, file)
-            {
+            },
+            handlePreview (file) {
+                console.log('handlePreview ' + file.response)
+            },
+            handleError (err, response, file) {
                 console.log(err)
                 console.log(response)
-            }
-            ,
-            handleSuccess(response, file, fileList)
-            {
-                console.log('file ' + this.filePathDictionary[file.name] + ' upload success');
-                let imgList = this.$refs.imageUpload.$el.querySelectorAll("li.el-upload__file");
-                let index= fileList.indexOf(file);
-                imgList[index].appendChild(this.createImg(fileList,index));
-            }
-            ,
-            initAppendImgs(){
-                let fileList = this.fileList;
-                let imgList = this.$refs.imageUpload.$el.querySelectorAll("li.el-upload__file");
+            },
+            handleSuccess (response, file, fileList) {
+                console.log('file ' + this.filePathDictionary[file.name] + ' upload success')
+                let imgList = this.$refs.imageUpload.$el.querySelectorAll('li.el-upload__file')
+                let index = fileList.indexOf(file)
+                imgList[index].appendChild(this.createImg(fileList, index))
+            },
+            initAppendImgs () {
+                let fileList = this.fileList
+                let imgList = this.$refs.imageUpload.$el.querySelectorAll('li.el-upload__file')
                 for (let [index, li] of imgList.entries()) {
-                    imgList[index].appendChild(this.createImg(fileList, index));
+                    li.appendChild(this.createImg(fileList, index))
                 }
-
             },
-            createImg(fileList,index){
-                let imgElement = document.createElement('img');
-                imgElement.setAttribute('src', fileList[index].url);
-                imgElement.setAttribute('class', "el-upload__img");
-                return imgElement;
+            createImg (fileList, index) {
+                let imgElement = document.createElement('img')
+                imgElement.setAttribute('src', fileList[index].url)
+                imgElement.setAttribute('class', 'el-upload__img')
+                return imgElement
             },
-
-            handleBeforeUpload(file)
-            {
+            handleBeforeUpload (file) {
                 let key = 'record/' + this.formatDate(new Date()) + file.name
                 this.filePathDictionary[file.name] = key
                 this.uploadData.key = key
-            }
-            ,
-            handleProgress(event, file, fileList)
-            {
-
-            }
-            ,
-            formatDate(now)
-            {
+            },
+            formatDate (now) {
                 var year = now.getFullYear()
                 var month = now.getMonth() + 1
                 var date = now.getDate()
@@ -105,16 +86,12 @@
                 var minute = now.getMinutes()
                 var second = now.getSeconds()
                 return year + '' + this.addZero(month) + '' + this.addZero(date) + '' + this.addZero(hour) + '' + this.addZero(minute) + '' + this.addZero(second)
-            }
-            ,
-            addZero(number)
-            {
+            },
+            addZero (number) {
                 return number >= 10 ? number : '0' + number
             }
-
         },
-        beforeMount()
-        {
+        beforeMount () {
             OSS.fetchPolicy(response => {
                 console.log(response.data.result)
                 var data = response.data.result
@@ -123,14 +100,13 @@
                     policy: data.policy,
                     signature: data.signature
                 }
-
                 this.ossDataFinished = true
             }, error => {
                 console.log('errorfetchpolicy:', error)
             })
         },
-        mounted(){
-            this.initAppendImgs();
+        mounted () {
+            this.initAppendImgs()
         }
     }
 </script>

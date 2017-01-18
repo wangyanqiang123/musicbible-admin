@@ -22,14 +22,15 @@ const routes = [
         name: 'admin',
         path: '/admin',
         component: Layout,
-        children: [{path: 'record/list', component: RecordList},
+        children: [
+            {path: 'record/list', component: RecordList},
             {path: 'record/edit', component: RecordEdit},
             {path: 'record/new', component: RecordNew},
             {path: 'dashboard', component: Index},
             {path: 'character/list', component: CharacterList},
             {path: 'character/new', component: CharacterNew},
             {path: 'article/list', component: ArticleList},
-            {path: 'article/new', component: ArticleNew},
+            {path: 'article/new', component: ArticleNew}
         ]
     },
     {path: '*', component: NotFound}

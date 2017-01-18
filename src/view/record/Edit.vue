@@ -12,7 +12,6 @@
         components: {UploadList},
         data () {
             return {}
-        },
-
+        }
     }
 </script>
