@@ -29,7 +29,7 @@ const routes = [
             {path: 'character/list', component: CharacterList},
             {path: 'character/new', component: CharacterNew},
             {path: 'article/list', component: ArticleList},
-            {path: 'article/new', component: ArticleNew},
+            {path: 'article/new', component: ArticleNew}
         ]
     },
     {path: '*', component: NotFound}

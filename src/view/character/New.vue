@@ -14,7 +14,7 @@
             </div>
             <el-row>
                 <el-col :span="4">
-                    <el-checkbox v-model="musician.is_composer" >作曲家</el-checkbox>
+                    <el-checkbox v-model="musician.is_composer">作曲家</el-checkbox>
                 </el-col>
                 <el-col :span="20">
                     <el-checkbox v-model="musician.is_artist">艺术家</el-checkbox>
@@ -122,18 +122,17 @@
             return {
                 tags: [{
                     parent: null,
-                    name: "tax0",
-                    id: 216,
+                    name: 'tax0',
+                    id: 216
                 }, {
                     parent: null,
-                    name: "tax1",
-                    id: 217,
+                    name: 'tax1',
+                    id: 217
                 }, {
-                    name: "tax2",
+                    name: 'tax2',
                     group: 56,
                     id: 218
-                }
-                ],
+                }],
                 musician: {
                     is_composer: false,
                     is_artist: true,
@@ -193,15 +192,12 @@
                 }
             }
         },
-        mounted(){
+        mounted () {
         },
         methods: {
-
-            handleCheckedTag(){
-
+            handleCheckedTag () {
             },
-            onSubmit(formName)
-            {
+            onSubmit (formName) {
                 this.fullscreenLoading = true
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
