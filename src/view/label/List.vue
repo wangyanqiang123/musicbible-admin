@@ -32,6 +32,7 @@
 						<el-button type="primary" @click="handleSubmit" icon="search">查询</el-button>
 					</el-row>
 					<el-row>
+						<span class="text-small">排序方式: </span>
 						<el-form-item prop="orderby">
 							<el-radio-group v-model="labelForm.orderby" fill="#463d34" @change="orderByChanged" size="small">
 								<el-radio-button label="创建时间"></el-radio-button>
@@ -101,7 +102,9 @@
 			color: white;
 		}
 	}
-
+	span.text-small {
+		font-size: 12px;
+	}
 	p.table-text{
 		white-space: nowrap;
 		text-overflow: ellipsis;
