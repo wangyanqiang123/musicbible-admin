@@ -2,7 +2,7 @@
     <div class="p-upload-list">
         <el-upload
                 ref="imageUpload"
-                action="http://hifiimg.oss-cn-hangzhou.aliyuncs.com"
+                :action="action"
                 :data="uploadData"
                 :on-preview="handlePreview"
                 :on-remove="handleRemove"
@@ -17,6 +17,7 @@
 </template>
 <style lang="less" rel="stylesheet/less">
     @import "../style/mixins";
+
     .p-upload-list {
         background: #fff;
         .el-upload__files {
@@ -31,7 +32,7 @@
             margin: 5px;
             background: #F3F4F6;
             &__name {
-               display:none;
+                display: none;
             }
             .el-upload__img {
                 width: 100%;
@@ -51,7 +52,7 @@
 
             &:hover,
             &:focus,
-            &:active{
+            &:active {
                 background: #EBECEE;
             }
         }
@@ -71,7 +72,7 @@
             text-indent: -999px;
             color: @background-gray;
             &:after {
-                display:block;
+                display: block;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -79,14 +80,14 @@
                 height: 30px;
                 text-align: center;
                 font-size: 20px;
-                line-height:30px;
+                line-height: 30px;
                 font-family: element-icons !important;
                 font-weight: 400;
                 content: "\E612";
                 text-indent: 0;
             }
         }
-        .el-upload__file:hover:before{
+        .el-upload__file:hover:before {
             content: "";
             display: block;
             position: absolute;
@@ -104,6 +105,7 @@
 <script>
     import OSS from '../api/OSS'
     import {revertListToName, revertListToId} from '../utils'
+    import Config from '../config'
     export default {
         name: 'UploadList',
         props: {
@@ -122,7 +124,8 @@
                 ossDataFinished: false,
                 uploadData: {},
                 filePathDictionary: {},
-                fileList: this.defaultImgList
+                fileList: this.defaultImgList,
+                action: Config.uploadServerUrl
             }
         },
         methods: {
@@ -140,10 +143,11 @@
                 console.log(response)
             },
             handleSuccess (response, file, fileList) {
-                console.log('file ' + this.filePathDictionary[file.name] + ' upload success')
+                console.log('file: ' + this.filePathDictionary[file.name] + ' upload success')
                 let imgList = this.$refs.imageUpload.$el.querySelectorAll('li.el-upload__file')
                 let index = fileList.indexOf(file)
                 imgList[index].appendChild(this.createImg(fileList, index))
+                this.$refs.imageUpload.fileList[index].url = Config.uploadServerUrl + '/' + this.filePathDictionary[file.name]
                 this.$refs.imageUpload.fileList[index].name = 0
             },
             initAppendImgs () {
