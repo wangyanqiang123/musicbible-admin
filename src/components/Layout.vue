@@ -41,6 +41,9 @@
                     <el-menu-item index="/admin/banner/list">
                         Banner
                     </el-menu-item>
+                    <el-menu-item index="/admin/billboard/list">
+                        榜单
+                    </el-menu-item>
                 </el-menu>
             </aside>
             <div class="p-layout-panel">

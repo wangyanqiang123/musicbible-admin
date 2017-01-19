@@ -13,6 +13,7 @@ import ArticleList from '../view/article/List'
 import ArticleNew from '../view/article/New'
 import LabelList from '../view/label/List'
 import BannerList from '../view/banner/List'
+import BillboardList from '../view/billboard/List'
 import Layout from '../components/Layout'
 import Index from '../view/Index'
 import NotFound from '../view/NotFound'
@@ -33,7 +34,8 @@ const routes = [
             {path: 'article/list', component: ArticleList},
             {path: 'article/new', component: ArticleNew},
             {path: 'label/list', component: LabelList},
-            {path: 'banner/list', component: BannerList}
+            {path: 'banner/list', component: BannerList},
+            {path: 'billboard/list', component: BillboardList}
         ]
     },
     {path: '*', component: NotFound}

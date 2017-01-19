@@ -4,36 +4,37 @@
             <div class="p-layout-breadcrumb">
                 <el-breadcrumb separator="/">
                     <el-breadcrumb-item :to="{ path: '/admin/dashboard' }">首页</el-breadcrumb-item>
-                    <el-breadcrumb-item :to="{ path: '/admin/banner/list' }">Banner</el-breadcrumb-item>
+                    <el-breadcrumb-item :to="{ path: '/admin/billboard/list' }">厂牌</el-breadcrumb-item>
                 </el-breadcrumb>
             </div>
             <el-button type="button" class="button-new" @click="create" icon="edit">新建</el-button>
         </el-row>
+
         <div class="p-layout-inner">
             <p-search
-                    ref="banner_list"
-                    :search-rules="bannerRules"
+                    ref="billboard_list"
+                    :search-rules="billboardRules"
                     :fetch-list="fetchList"
                     page-layout="total, sizes, prev, pager, next, jumper"
-                    :search-form="bannerForm">
+                    :search-form="billboardForm">
 
                 <template slot="form">
                     <el-row>
                         <el-form-item prop="type" style="margin-right: 0;">
-                            <el-select v-model="bannerForm.type" placeholder="搜索条件" >
+                            <el-select v-model="billboardForm.type" placeholder="搜索条件" >
                                 <el-option label="标题" value="title"></el-option>
                                 <el-option label="创建者" value="owner"></el-option>
                             </el-select>
                         </el-form-item>
                         <el-form-item prop="keyword">
-                            <el-input v-model="bannerForm.keyword" placeholder="关键字"></el-input>
+                            <el-input v-model="billboardForm.keyword" placeholder="关键字"></el-input>
                         </el-form-item>
                         <el-button type="primary" @click="handleSubmit" icon="search">查询</el-button>
                     </el-row>
                     <el-row>
                         <span class="text-small">排序方式: </span>
                         <el-form-item prop="orderby">
-                            <el-radio-group v-model="bannerForm.orderby" fill="#463d34" @change="orderByChanged" size="small">
+                            <el-radio-group v-model="billboardForm.orderby" fill="#463d34" @change="orderByChanged" size="small">
                                 <el-radio-button label="create_time">创建时间</el-radio-button>
                                 <el-radio-button label="weight">权重</el-radio-button>
                             </el-radio-group>
@@ -42,13 +43,12 @@
                 </template>
 
                 <template slot="table">
-                    <el-table-column
+                    <el-table-column align="left"
                                      label="权重"
                                      width="70"
-                                     align="center"
                     >
                         <template scope="scope">
-                            <p  :title="scope.row.recommend_level">{{ scope.row.recommend_level }}</p>
+                            <p class="table-text" :title="scope.row.recommend_level">{{ scope.row.recommend_level }}</p>
                         </template>
                     </el-table-column>
 
@@ -68,7 +68,7 @@
                                      :show-overflow-tooltip="showOverFlowTooltip"
                     >
                         <template scope="scope" >
-                            <p class="table-text">{{ scope.row.title }}</p>
+                            <p class="table-text">{{ scope.row.title_cn }}</p>
                         </template>
                     </el-table-column>
 
@@ -87,7 +87,6 @@
                 </template>
             </p-search>
         </div>
-
     </div>
 </template>
 <style lang="less" rel="stylesheet/less" scoped>
@@ -109,16 +108,16 @@
     }
 </style>
 <script>
-	import BannerApi from '../../api/Banner'
+	import BillboardApi from '../../api/Billboard'
   import {setTime} from '../../utils'
   export default {
-    name: 'BannerList',
+    name: 'BillboardList',
     data () {
       return {
-        fetchList: BannerApi.list,
-        bannerRules: {
+        fetchList: BillboardApi.list,
+        billboardRules: {
         },
-        bannerForm: {
+        billboardForm: {
           keyword: '',
           type: 'title',
           orderby: 'create_time'
@@ -141,11 +140,11 @@
         // this.$router.push('/record/new')
       },
       orderByChanged (v) {
-        this.bannerForm.orderby = v
-        this.$refs.banner_list.refreshList()
+        this.billboardForm.orderby = v
+        this.$refs.billboard_list.refreshList()
       },
       handleSubmit () {
-        this.$refs.banner_list.handleSubmit()
+        this.$refs.billboard_list.handleSubmit()
       }
     },
     filters: {
@@ -155,4 +154,3 @@
     }
   }
 </script>
-

@@ -35,8 +35,8 @@
 						<span class="text-small">排序方式: </span>
 						<el-form-item prop="orderby">
 							<el-radio-group v-model="labelForm.orderby" fill="#463d34" @change="orderByChanged" size="small">
-								<el-radio-button label="创建时间"></el-radio-button>
-								<el-radio-button label="权重"></el-radio-button>
+								<el-radio-button label="create_time">创建时间</el-radio-button>
+								<el-radio-button label="weight">权重</el-radio-button>
 							</el-radio-group>
 						</el-form-item>
 					</el-row>
@@ -120,7 +120,7 @@
         labelForm: {
           keyword: '',
           type: 'title',
-          orderby: '创建时间'
+          orderby: 'create_time'
         },
         showOverFlowTooltip: true
       }
