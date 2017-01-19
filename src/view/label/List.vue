@@ -91,17 +91,6 @@
 </template>
 <style lang="less" rel="stylesheet/less" scoped>
 	@import "../../style/app.less";
-	.panel-top {
-		position: relative;
-		padding: 0.5em 0;
-		.button-new {
-			position: absolute;
-			right: 0;
-			top: 0;
-			background: @primary-dark-color;
-			color: white;
-		}
-	}
 	span.text-small {
 		font-size: 12px;
 	}

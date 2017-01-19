@@ -38,6 +38,9 @@
                     <el-menu-item index="/admin/label/list">
                         厂牌
                     </el-menu-item>
+                    <el-menu-item index="/admin/banner/list">
+                        Banner
+                    </el-menu-item>
                 </el-menu>
             </aside>
             <div class="p-layout-panel">
