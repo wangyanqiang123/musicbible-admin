@@ -1,6 +1,6 @@
 @import "mixins";
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: PingFangSC-Regular, 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   //text-align: center;
@@ -10,6 +10,12 @@ body {
   padding: 0;
   margin: 0;
   background: @background-gray;
+}
+hr {
+  color: #d3d3d3;
+  border-color: #d3d3d3;
+  border-top: none;
+  margin-bottom: 20px;
 }
 .fade-enter-active, .fade-leave-active {
   transition-property: opacity;
@@ -22,4 +28,31 @@ body {
 
 .fade-enter, .fade-leave-active {
   opacity: 0
+}
+
+.el-breadcrumb__item:last-child .el-breadcrumb__item__inner {
+  color: #000 !important;
+}
+.panel-top {
+  position: relative;
+  padding: 0.5em 0;
+  .button-new {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: @primary-dark-color;
+    color: white;
+  }
+}
+
+.edit-body {
+  padding: 20px;
+  background: white;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  .edit-header {
+    font-size: 20px;
+    line-height: 28px;
+    color: #000;
+  }
 }

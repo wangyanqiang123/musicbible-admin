@@ -1141,7 +1141,7 @@
 .el-pagination{
     white-space: nowrap;
     padding: 2px 5px;
-    color: #c1b087;
+    color: #000;
 }
 
 .el-pagination span, .el-pagination button{

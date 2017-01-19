@@ -72,7 +72,7 @@
     </div>
 </template>
 <style lang="less" rel="stylesheet/less" scoped>
-    @import "../../style/app.less";
+    @import "../../style/mixins.less";
     button.el-button.button-new {
         float: right;
     }
@@ -80,13 +80,11 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         line-height: 14px;
-
     }
     p.table-text.time {
         color: @text-second-color;
     }
 </style>
-<script type="text/javascript" src="/static/moment.min.js"></script>
 <script>
   import RecordApi from '../../api/Record'
   import {setTime} from '../../utils'

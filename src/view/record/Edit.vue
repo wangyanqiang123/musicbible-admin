@@ -32,7 +32,6 @@
             }
         },
         beforeMount () {
-
         }
     }
 </script>

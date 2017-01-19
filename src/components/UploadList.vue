@@ -15,7 +15,7 @@
         </el-upload>
     </div>
 </template>
-<style lang="less" rel="stylesheet/less">
+<style lang="less" rel="stylesheet/less" scoped>
     @import "../style/mixins";
 
     .p-upload-list {
@@ -35,7 +35,8 @@
                 display: none;
             }
             .el-upload__img {
-                width: 100%;
+                max-width: 100%;
+                max-height: 100%;
             }
         }
 
@@ -104,7 +105,7 @@
 </style>
 <script>
     import OSS from '../api/OSS'
-    import {revertListToName, revertListToId} from '../utils'
+    import {revertListToName, revertListToId, setImageUrl, formatDate} from '../utils'
     import Config from '../config'
     export default {
         name: 'UploadList',
@@ -115,12 +116,11 @@
             },
             keyPrefix: {
                 type: String,
-                default: 'p'
+                default: 'key'
             }
         },
         data () {
             return {
-                multiple: true,
                 ossDataFinished: false,
                 uploadData: {},
                 filePathDictionary: {},
@@ -146,7 +146,7 @@
                 console.log('file: ' + this.filePathDictionary[file.name] + ' upload success')
                 let imgList = this.$refs.imageUpload.$el.querySelectorAll('li.el-upload__file')
                 let index = fileList.indexOf(file)
-                this.$refs.imageUpload.fileList[index].url = Config.uploadServerUrl + '/' + this.filePathDictionary[file.name]
+                this.$refs.imageUpload.fileList[index].url = this.filePathDictionary[file.name]
                 this.$refs.imageUpload.fileList[index].name = 0
                 imgList[index].appendChild(this.createImg(fileList, index))
             },
@@ -159,26 +159,14 @@
             },
             createImg (fileList, index) {
                 let imgElement = document.createElement('img')
-                imgElement.setAttribute('src', fileList[index].url)
+                imgElement.setAttribute('src', setImageUrl(fileList[index].url))
                 imgElement.setAttribute('class', 'el-upload__img')
                 return imgElement
             },
             handleBeforeUpload (file) {
-                let key = this.keyPrefix + '/' + this.formatDate(new Date()) + file.name
+                let key = this.keyPrefix + '/' + formatDate(new Date()) + file.name
                 this.filePathDictionary[file.name] = key
                 this.uploadData.key = key
-            },
-            formatDate (now) {
-                var year = now.getFullYear()
-                var month = now.getMonth() + 1
-                var date = now.getDate()
-                var hour = now.getHours()
-                var minute = now.getMinutes()
-                var second = now.getSeconds()
-                return year + '' + this.addZero(month) + '' + this.addZero(date) + '' + this.addZero(hour) + '' + this.addZero(minute) + '' + this.addZero(second)
-            },
-            addZero (number) {
-                return number >= 10 ? number : '0' + number
             }
         },
         beforeMount () {

@@ -91,6 +91,25 @@
       handleError (err, response, file) {
         console.log(err)
         console.log(response)
+        if (response.toString().includes('Invalid according to Policy: Policy expired')) {
+          this.$message({
+            message: 'OSS Token 过期，已重新生成，请重试',
+            type: 'warning'
+          })
+          this.ossDataFinished = false
+          OSS.fetchPolicy(response => {
+            console.log(response.data.result)
+            var data = response.data.result
+            this.uploadData = {
+              OSSAccessKeyId: data.accessid,
+              policy: data.policy,
+              signature: data.signature
+            }
+            this.ossDataFinished = true
+          }, error => {
+            console.log(error)
+          })
+        }
       },
       handleSuccess (response, file, fileList) {
         console.log('file ' + this.filePathDictionary[file.name] + ' upload success')

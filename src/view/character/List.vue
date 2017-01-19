@@ -60,7 +60,7 @@
     </div>
 </template>
 <style lang="less" rel="stylesheet/less">
-    @import "../../style/app.less";
+    @import "../../style/mixins.less";
     button.el-button.button-new {
         float: right;
     }
@@ -101,7 +101,7 @@
         // this.$refs.user.refresh()
       },
       createArtist () {
-        this.$router.push('/admin/artist/new')
+        this.$router.push('/admin/character/new')
       }
     },
     filters: {

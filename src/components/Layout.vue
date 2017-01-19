@@ -22,7 +22,6 @@
                 <el-menu
                         theme="dark"
                         :unique-opened="true"
-
                         :router="true">
                     <el-menu-item index="/admin/record/list">
                         唱片
@@ -35,6 +34,15 @@
                     </el-menu-item>
                     <el-menu-item index="/admin/article/new">
                         赏析文章
+                    </el-menu-item>
+                    <el-menu-item index="/admin/label/list">
+                        厂牌
+                    </el-menu-item>
+                    <el-menu-item index="/admin/banner/list">
+                        Banner
+                    </el-menu-item>
+                    <el-menu-item index="/admin/billboard/list">
+                        榜单
                     </el-menu-item>
                 </el-menu>
             </aside>
@@ -91,7 +99,7 @@ export default {
 </script>
 
 <style lang="less" rel="stylesheet/less">
-    @import "../style/app";
+    @import "../style/mixins.less";
     @sider-width: 175px;
     @top-height: 70px;
     @sider-collapse-width: 64px;
