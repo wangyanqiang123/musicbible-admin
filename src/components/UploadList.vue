@@ -8,96 +8,163 @@
                 :on-remove="handleRemove"
                 :on-error="handleError"
                 :on-success="handleSuccess"
-                :on-progress="handleProgress"
                 :before-upload="handleBeforeUpload"
                 :default-file-list="fileList">
-            <el-button size="small" type="primary">点击上传</el-button>
+            <el-button size="small" icon="plus" class="p-upload-button"></el-button>
             <div class="el-upload__tip" slot="tip">只能上传jpg/png文件</div>
         </el-upload>
     </div>
 </template>
 <style lang="less" rel="stylesheet/less">
-    .p-upload-list{
-        .el-upload__img {
+    @import "../style/mixins";
+    .p-upload-list {
+        background: #fff;
+        .el-upload__files {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .el-upload__file {
+            position: relative;
             width: 100px;
             height: 100px;
+            margin: 5px;
+            background: #F3F4F6;
+            &__name {
+               display:none;
+            }
+            .el-upload__img {
+                width: 100%;
+            }
+        }
+
+        .p-upload-button,
+        .p-upload-button:hover,
+        .p-upload-button:focus,
+        .p-upload-button:active {
+            width: 100px;
+            height: 100px;
+            font-size: 32px;
+            background: #F3F4F6;
+            color: @text-third-color;
+            border-color: @divider-dark-color;
+
+            &:hover,
+            &:focus,
+            &:active{
+                background: #EBECEE;
+            }
+        }
+
+        .el-upload__file a [class^="el-icon"] {
+            display: none;
+        }
+
+        .el-upload__btn-delete {
+            display: block;
+            position: absolute;
+            top: 35px;
+            left: 35px;
+            width: 30px;
+            height: 30px;
+            opacity: 0;
+            text-indent: -999px;
+            color: @background-gray;
+            &:after {
+                display:block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                font-size: 20px;
+                line-height:30px;
+                font-family: element-icons !important;
+                font-weight: 400;
+                content: "\E612";
+                text-indent: 0;
+            }
+        }
+        .el-upload__file:hover:before{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .el-upload__file:hover .el-upload__btn-delete {
+            opacity: 1;
         }
     }
 </style>
 <script>
     import OSS from '../api/OSS'
-    import _ from 'lodash'
+    import {revertListToName, revertListToId} from '../utils'
     export default {
         name: 'UploadList',
+        props: {
+            defaultImgList: {
+                type: Array,
+                default: []
+            },
+            keyPrefix: {
+                type: String,
+                default: 'p'
+            }
+        },
         data () {
             return {
                 multiple: true,
                 ossDataFinished: false,
                 uploadData: {},
                 filePathDictionary: {},
-                fileList: [{
-                    name: 'food.jpeg',
-                    url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-                }, {
-                    name: 'food2.jpeg',
-                    url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-                }]
+                fileList: this.defaultImgList
             }
         },
         methods: {
-            handleRemove(file, fileList)
-            {
+            getFileList () {
+                return revertListToId(this.$refs.imageUpload.fileList)
+            },
+            handleRemove (file, fileList) {
                 console.log(file, fileList)
-            }
-            ,
-            handlePreview(file)
-            {
-                console.log('handlePreview ' + file.response);
-            }
-            ,
-            handleError(err, response, file)
-            {
+            },
+            handlePreview (file) {
+                console.log('handlePreview ' + file.response)
+            },
+            handleError (err, response, file) {
                 console.log(err)
                 console.log(response)
-            }
-            ,
-            handleSuccess(response, file, fileList)
-            {
-                console.log('file ' + this.filePathDictionary[file.name] + ' upload success');
-                let imgList = this.$refs.imageUpload.$el.querySelectorAll("li.el-upload__file");
-                let index= fileList.indexOf(file);
-                imgList[index].appendChild(this.createImg(fileList,index));
-            }
-            ,
-            initAppendImgs(){
-                let fileList = this.fileList;
-                let imgList = this.$refs.imageUpload.$el.querySelectorAll("li.el-upload__file");
+            },
+            handleSuccess (response, file, fileList) {
+                console.log('file ' + this.filePathDictionary[file.name] + ' upload success')
+                let imgList = this.$refs.imageUpload.$el.querySelectorAll('li.el-upload__file')
+                let index = fileList.indexOf(file)
+                imgList[index].appendChild(this.createImg(fileList, index))
+                this.$refs.imageUpload.fileList[index].name = 0
+            },
+            initAppendImgs () {
+                let fileList = this.fileList
+                let imgList = this.$refs.imageUpload.$el.querySelectorAll('li.el-upload__file')
                 for (let [index, li] of imgList.entries()) {
-                    imgList[index].appendChild(this.createImg(fileList, index));
+                    li.appendChild(this.createImg(fileList, index))
                 }
-
             },
-            createImg(fileList,index){
-                let imgElement = document.createElement('img');
-                imgElement.setAttribute('src', fileList[index].url);
-                imgElement.setAttribute('class', "el-upload__img");
-                return imgElement;
+            createImg (fileList, index) {
+                let imgElement = document.createElement('img')
+                imgElement.setAttribute('src', fileList[index].url)
+                imgElement.setAttribute('class', 'el-upload__img')
+                return imgElement
             },
-
-            handleBeforeUpload(file)
-            {
-                let key = 'record/' + this.formatDate(new Date()) + file.name
+            handleBeforeUpload (file) {
+                let key = this.keyPrefix + '/' + this.formatDate(new Date()) + file.name
                 this.filePathDictionary[file.name] = key
                 this.uploadData.key = key
-            }
-            ,
-            handleProgress(event, file, fileList)
-            {
-
-            }
-            ,
-            formatDate(now)
-            {
+            },
+            formatDate (now) {
                 var year = now.getFullYear()
                 var month = now.getMonth() + 1
                 var date = now.getDate()
@@ -105,16 +172,13 @@
                 var minute = now.getMinutes()
                 var second = now.getSeconds()
                 return year + '' + this.addZero(month) + '' + this.addZero(date) + '' + this.addZero(hour) + '' + this.addZero(minute) + '' + this.addZero(second)
-            }
-            ,
-            addZero(number)
-            {
+            },
+            addZero (number) {
                 return number >= 10 ? number : '0' + number
             }
-
         },
-        beforeMount()
-        {
+        beforeMount () {
+            this.fileList = revertListToName(this.defaultImgList)
             OSS.fetchPolicy(response => {
                 console.log(response.data.result)
                 var data = response.data.result
@@ -123,14 +187,13 @@
                     policy: data.policy,
                     signature: data.signature
                 }
-
                 this.ossDataFinished = true
             }, error => {
                 console.log('errorfetchpolicy:', error)
             })
         },
-        mounted(){
-            this.initAppendImgs();
+        mounted () {
+            this.initAppendImgs()
         }
     }
 </script>
