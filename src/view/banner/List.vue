@@ -91,7 +91,7 @@
     </div>
 </template>
 <style lang="less" rel="stylesheet/less" scoped>
-    @import "../../style/app.less";
+    @import "../../style/mixins.less";
     span.text-small {
         font-size: 12px;
     }
@@ -138,7 +138,7 @@
         // this.$refs.user.refresh()
       },
       create () {
-        // this.$router.push('/record/new')
+         this.$router.push('/admin/banner/new')
       },
       orderByChanged (v) {
         this.bannerForm.orderby = v

@@ -15,7 +15,7 @@
         </el-upload>
     </div>
 </template>
-<style lang="less" rel="stylesheet/less">
+<style lang="less" rel="stylesheet/less" scoped>
     @import "../style/mixins";
 
     .p-upload-list {
@@ -105,7 +105,7 @@
 </style>
 <script>
     import OSS from '../api/OSS'
-    import {revertListToName, revertListToId, setImageUrl} from '../utils'
+    import {revertListToName, revertListToId, setImageUrl, formatDate} from '../utils'
     import Config from '../config'
     export default {
         name: 'UploadList',
@@ -116,12 +116,11 @@
             },
             keyPrefix: {
                 type: String,
-                default: 'p'
+                default: 'key'
             }
         },
         data () {
             return {
-                multiple: true,
                 ossDataFinished: false,
                 uploadData: {},
                 filePathDictionary: {},
@@ -165,21 +164,9 @@
                 return imgElement
             },
             handleBeforeUpload (file) {
-                let key = this.keyPrefix + '/' + this.formatDate(new Date()) + file.name
+                let key = this.keyPrefix + '/' + formatDate(new Date()) + file.name
                 this.filePathDictionary[file.name] = key
                 this.uploadData.key = key
-            },
-            formatDate (now) {
-                var year = now.getFullYear()
-                var month = now.getMonth() + 1
-                var date = now.getDate()
-                var hour = now.getHours()
-                var minute = now.getMinutes()
-                var second = now.getSeconds()
-                return year + '' + this.addZero(month) + '' + this.addZero(date) + '' + this.addZero(hour) + '' + this.addZero(minute) + '' + this.addZero(second)
-            },
-            addZero (number) {
-                return number >= 10 ? number : '0' + number
             }
         },
         beforeMount () {

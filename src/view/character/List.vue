@@ -60,7 +60,7 @@
     </div>
 </template>
 <style lang="less" rel="stylesheet/less">
-    @import "../../style/app.less";
+    @import "../../style/mixins.less";
     button.el-button.button-new {
         float: right;
     }

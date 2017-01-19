@@ -99,7 +99,7 @@ export default {
 </script>
 
 <style lang="less" rel="stylesheet/less">
-    @import "../style/app";
+    @import "../style/mixins.less";
     @sider-width: 175px;
     @top-height: 70px;
     @sider-collapse-width: 64px;

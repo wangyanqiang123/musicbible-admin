@@ -27,10 +27,14 @@ export function revertListToId (listOption) {
     listOption.forEach(function (item) {
         let newItem = {}
         newItem.id = item.name
-        newItem.url = item.url
+        newItem.url = excludeImagePrefix(item.url)
         newList.push(newItem)
     })
     return newList
+}
+
+function excludeImagePrefix (url) {
+  return url.replace(uploadServerUrl + '/', '')
 }
 
 export function setImageUrl (orginalUrl, type) {
@@ -52,4 +56,17 @@ export function setImageUrl (orginalUrl, type) {
       url = uploadServerUrl + orginalUrl + endFix
     }
     return url
+}
+
+export function formatDate (now) {
+  var year = now.getFullYear()
+  var month = now.getMonth() + 1
+  var date = now.getDate()
+  var hour = now.getHours()
+  var minute = now.getMinutes()
+  var second = now.getSeconds()
+  return year + '' + addZero(month) + '' + addZero(date) + '' + addZero(hour) + '' + addZero(minute) + '' + addZero(second)
+}
+export function addZero (number) {
+  return number >= 10 ? number : '0' + number
 }

@@ -90,7 +90,7 @@
     </div>
 </template>
 <style lang="less" rel="stylesheet/less" scoped>
-    @import "../../style/app.less";
+    @import "../../style/mixins.less";
     span.text-small {
         font-size: 12px;
     }

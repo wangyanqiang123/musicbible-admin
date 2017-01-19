@@ -8,6 +8,7 @@ const config = function () {
     if (user.hasAuthed()) {
       config.headers['Authorization'] = user.getAuthHeader()
     }
+    console.log(config)
     return config
   }, error => {
     return Promise.reject(error)

@@ -13,6 +13,7 @@ import ArticleList from '../view/article/List'
 import ArticleNew from '../view/article/New'
 import LabelList from '../view/label/List'
 import BannerList from '../view/banner/List'
+import BannerNew from '../view/banner/New'
 import BillboardList from '../view/billboard/List'
 import Layout from '../components/Layout'
 import Index from '../view/Index'
@@ -36,6 +37,7 @@ const routes = [
             {path: 'article/new', component: ArticleNew},
             {path: 'label/list', component: LabelList},
             {path: 'banner/list', component: BannerList},
+            {path: 'banner/new', component: BannerNew},
             {path: 'billboard/list', component: BillboardList}
         ]
     },
@@ -43,7 +45,6 @@ const routes = [
 ]
 
 const router = new VueRouter({
-    mode: 'history',
     routes
 })
 
