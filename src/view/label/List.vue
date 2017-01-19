@@ -147,11 +147,9 @@
         this.$refs.label_list.handleSubmit()
       },
       isValid (name) {
-
         if (name.includes('i')) {
           return true
         } else {
-
           return false
         }
       }

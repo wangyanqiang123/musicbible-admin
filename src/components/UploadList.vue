@@ -35,7 +35,8 @@
                 display: none;
             }
             .el-upload__img {
-                width: 100%;
+                max-width: 100%;
+                max-height: 100%;
             }
         }
 
@@ -104,7 +105,7 @@
 </style>
 <script>
     import OSS from '../api/OSS'
-    import {revertListToName, revertListToId} from '../utils'
+    import {revertListToName, revertListToId, setImageUrl} from '../utils'
     import Config from '../config'
     export default {
         name: 'UploadList',
@@ -146,7 +147,7 @@
                 console.log('file: ' + this.filePathDictionary[file.name] + ' upload success')
                 let imgList = this.$refs.imageUpload.$el.querySelectorAll('li.el-upload__file')
                 let index = fileList.indexOf(file)
-                this.$refs.imageUpload.fileList[index].url = Config.uploadServerUrl + '/' + this.filePathDictionary[file.name]
+                this.$refs.imageUpload.fileList[index].url = this.filePathDictionary[file.name]
                 this.$refs.imageUpload.fileList[index].name = 0
                 imgList[index].appendChild(this.createImg(fileList, index))
             },
@@ -159,7 +160,7 @@
             },
             createImg (fileList, index) {
                 let imgElement = document.createElement('img')
-                imgElement.setAttribute('src', fileList[index].url)
+                imgElement.setAttribute('src', setImageUrl(fileList[index].url))
                 imgElement.setAttribute('class', 'el-upload__img')
                 return imgElement
             },
