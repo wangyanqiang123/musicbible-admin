@@ -146,9 +146,9 @@
                 console.log('file: ' + this.filePathDictionary[file.name] + ' upload success')
                 let imgList = this.$refs.imageUpload.$el.querySelectorAll('li.el-upload__file')
                 let index = fileList.indexOf(file)
-                imgList[index].appendChild(this.createImg(fileList, index))
                 this.$refs.imageUpload.fileList[index].url = Config.uploadServerUrl + '/' + this.filePathDictionary[file.name]
                 this.$refs.imageUpload.fileList[index].name = 0
+                imgList[index].appendChild(this.createImg(fileList, index))
             },
             initAppendImgs () {
                 let fileList = this.fileList
